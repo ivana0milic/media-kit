@@ -1,679 +1,361 @@
-<!--
-  FocusEconomics Media Kit Landing Page
-  =======================================
-  HOW TO USE IN WORDPRESS:
-  1. Add a "Custom HTML" block to your page (this works even with restricted blocks,
-     since Custom HTML renders exactly what you paste).
-  2. Copy this ENTIRE file's contents and paste it into that one block.
-  3. Everything (CSS + HTML) is self-contained and scoped under #fe-mediakit,
-     so it will not leak styles into the rest of your theme.
-  4. Search for "REPLACE:" comments and [bracketed placeholders] to swap in real
-     content, images, and links. Placeholder images are dashed boxes — replace
-     the surrounding <div class="fe-imgph"> with a real <img src="..."> tag.
-  5. Brand colors are defined once as CSS variables at the top of the <style>
-     block — edit them there to restyle the whole page at once.
--->
-<div id="fe-mediakit">
-<style>
-  #fe-mediakit {
-    --fe-navy: #13234B;
-    --fe-slate: #3E6389;
-    --fe-blue: #669EBF;
-    --fe-sky: #6CC3E5;
-    --fe-orange: #EC9446;
-    --fe-yellow: #F9D555;
-    --fe-coral: #DC7572;
-    --fe-sage: #79AD95;
-    --fe-gray: #808080;
-    --fe-gray-light: #B5B7C1;
-    --fe-gray-pale: #DADCE6;
-    --fe-off-white: #F8FCFD;
-    --fe-black: #001D27;
+<!-- ============================================================
+     FocusEconomics — Media Kit page
+     Paste this ENTIRE block into the same block/method that worked
+     for you previously (all styling is inline — no <style> tag,
+     no CSS classes, no JavaScript — so nothing gets stripped).
+     Search for [REPLACE ...] to fill in real content, links, and
+     image URLs (upload files to the WordPress Media Library first,
+     then paste the resulting URL into the matching src="..." or
+     href="...").
+     ============================================================ -->
+<div style="max-width:1000px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#001D27;line-height:1.65;">
 
-    all: initial;
-    display: block;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: var(--fe-black);
-    background: #fff;
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-  }
-  #fe-mediakit *, #fe-mediakit *::before, #fe-mediakit *::after {
-    box-sizing: border-box;
-  }
-  #fe-mediakit a { text-decoration: none; color: inherit; }
-  #fe-mediakit ul, #fe-mediakit ol { margin: 0; padding: 0; list-style: none; }
-  #fe-mediakit img { max-width: 100%; display: block; }
-  #fe-mediakit h1, #fe-mediakit h2, #fe-mediakit h3, #fe-mediakit h4, #fe-mediakit p {
-    margin: 0 0 0.6em 0;
-    font-family: inherit;
-  }
-  #fe-mediakit section { padding: 72px 24px; }
-  #fe-mediakit .fe-wrap { max-width: 1120px; margin: 0 auto; }
-  #fe-mediakit .fe-alt { background: var(--fe-off-white); }
-  #fe-mediakit .fe-eyebrow {
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--fe-slate);
-    background: var(--fe-gray-pale);
-    padding: 5px 12px;
-    border-radius: 20px;
-    margin-bottom: 14px;
-  }
-  #fe-mediakit .fe-h2 {
-    font-size: clamp(24px, 3vw, 32px);
-    font-weight: 800;
-    color: var(--fe-navy);
-    letter-spacing: -0.01em;
-  }
-  #fe-mediakit .fe-sub {
-    font-size: 16px;
-    color: var(--fe-gray);
-    max-width: 640px;
-    margin-bottom: 40px;
-  }
-  #fe-mediakit .fe-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    font-weight: 700;
-    padding: 11px 20px;
-    border-radius: 8px;
-    border: 2px solid transparent;
-    cursor: pointer;
-    transition: opacity 0.15s ease, transform 0.15s ease;
-  }
-  #fe-mediakit .fe-btn:hover { opacity: 0.88; }
-  #fe-mediakit .fe-btn-primary { background: var(--fe-navy); color: #fff; }
-  #fe-mediakit .fe-btn-accent { background: var(--fe-orange); color: #fff; }
-  #fe-mediakit .fe-btn-ghost { background: transparent; border-color: var(--fe-gray-pale); color: var(--fe-navy); }
-  #fe-mediakit .fe-btn-ghost:hover { border-color: var(--fe-blue); }
-  #fe-mediakit .fe-btn-sm { padding: 8px 14px; font-size: 13px; }
+  <!-- ===== HERO ===== -->
+  <div style="background:#13234B;border-radius:16px;padding:44px 40px;margin:0 0 20px;">
+    <div style="color:#6CC3E5;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin:0 0 14px;">Media Kit</div>
+    <h1 style="font-family:Georgia,'Times New Roman',serif;font-size:34px;line-height:1.15;color:#FFFFFF;font-weight:700;margin:0 0 14px;">The FocusEconomics Newsroom</h1>
+    <p style="font-size:16px;color:#DADCE6;max-width:640px;margin:0 0 28px;">[REPLACE one-line company description — e.g. "Independent economic analysis, forecasts, and consensus data covering 130+ countries, built for journalists, partners, and the press."]</p>
 
-  /* ---------- Placeholder image block ---------- */
-  #fe-mediakit .fe-imgph {
-    border: 2px dashed var(--fe-gray-light);
-    border-radius: 12px;
-    background: repeating-linear-gradient(45deg, var(--fe-off-white), var(--fe-off-white) 10px, #fff 10px, #fff 20px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--fe-gray);
-    padding: 20px;
-    gap: 6px;
-  }
-  #fe-mediakit .fe-imgph .fe-imgph-icon { font-size: 26px; opacity: 0.6; }
-  #fe-mediakit .fe-imgph .fe-imgph-label { font-size: 13px; font-weight: 700; color: var(--fe-slate); }
-  #fe-mediakit .fe-imgph .fe-imgph-meta { font-size: 11px; color: var(--fe-gray-light); }
-
-  /* ---------- Nav ---------- */
-  #fe-mediakit .fe-nav {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: rgba(255,255,255,0.94);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid var(--fe-gray-pale);
-  }
-  #fe-mediakit .fe-nav-inner {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 14px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-  }
-  #fe-mediakit .fe-nav-brand { font-weight: 800; color: var(--fe-navy); font-size: 17px; }
-  #fe-mediakit .fe-nav-brand span { color: var(--fe-blue); }
-  #fe-mediakit .fe-nav-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    align-items: center;
-  }
-  #fe-mediakit .fe-nav-links a {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--fe-slate);
-    padding: 8px 12px;
-    border-radius: 6px;
-    white-space: nowrap;
-  }
-  #fe-mediakit .fe-nav-links a:hover { background: var(--fe-off-white); color: var(--fe-navy); }
-  #fe-mediakit .fe-nav-toggle { display: none; }
-
-  /* ---------- Hero ---------- */
-  #fe-mediakit .fe-hero {
-    background: linear-gradient(160deg, var(--fe-navy) 0%, var(--fe-slate) 100%);
-    color: #fff;
-    padding: 88px 24px 72px;
-    text-align: center;
-  }
-  #fe-mediakit .fe-hero .fe-eyebrow { background: rgba(255,255,255,0.14); color: #fff; }
-  #fe-mediakit .fe-hero h1 {
-    font-size: clamp(32px, 5vw, 48px);
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    max-width: 780px;
-    margin: 0 auto 16px;
-  }
-  #fe-mediakit .fe-hero p {
-    font-size: 17px;
-    color: var(--fe-gray-pale);
-    max-width: 620px;
-    margin: 0 auto 32px;
-  }
-  #fe-mediakit .fe-hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-  #fe-mediakit .fe-hero .fe-btn-ghost { color: #fff; border-color: rgba(255,255,255,0.35); }
-  #fe-mediakit .fe-hero .fe-btn-ghost:hover { border-color: #fff; }
-  #fe-mediakit .fe-hero-stats {
-    max-width: 780px;
-    margin: 48px auto 0;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    border-top: 1px solid rgba(255,255,255,0.18);
-    padding-top: 32px;
-  }
-  #fe-mediakit .fe-hero-stats div strong { display: block; font-size: 24px; color: var(--fe-yellow); }
-  #fe-mediakit .fe-hero-stats div span { font-size: 12px; color: var(--fe-gray-pale); }
-
-  /* ---------- Grids ---------- */
-  #fe-mediakit .fe-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  #fe-mediakit .fe-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  #fe-mediakit .fe-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-
-  #fe-mediakit .fe-card {
-    background: #fff;
-    border: 1px solid var(--fe-gray-pale);
-    border-radius: 14px;
-    padding: 24px;
-  }
-
-  /* ---------- Logos ---------- */
-  #fe-mediakit .fe-logo-card .fe-imgph { height: 140px; margin-bottom: 16px; }
-  #fe-mediakit .fe-logo-card h4 { font-size: 15px; color: var(--fe-navy); }
-  #fe-mediakit .fe-logo-card p { font-size: 13px; color: var(--fe-gray); }
-  #fe-mediakit .fe-logo-card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
-
-  /* ---------- Brand guidelines ---------- */
-  #fe-mediakit .fe-swatches { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; margin-bottom: 32px; }
-  #fe-mediakit .fe-swatch { border-radius: 10px; overflow: hidden; border: 1px solid var(--fe-gray-pale); }
-  #fe-mediakit .fe-swatch-color { height: 64px; }
-  #fe-mediakit .fe-swatch-label { background: #fff; padding: 6px 8px; font-size: 10px; font-weight: 700; color: var(--fe-navy); text-align: center; }
-  #fe-mediakit .fe-type-row { display: flex; align-items: baseline; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--fe-gray-pale); }
-  #fe-mediakit .fe-type-row:last-child { border-bottom: none; }
-  #fe-mediakit .fe-type-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--fe-gray); width: 90px; flex-shrink: 0; }
-  #fe-mediakit .fe-dos-donts { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 28px; }
-  #fe-mediakit .fe-dos-donts .fe-imgph { height: 110px; }
-  #fe-mediakit .fe-dos-donts h4 { font-size: 13px; margin-bottom: 10px; }
-  #fe-mediakit .fe-dos-donts .fe-do h4 { color: var(--fe-sage); }
-  #fe-mediakit .fe-dos-donts .fe-dont h4 { color: var(--fe-coral); }
-
-  /* ---------- Executive bios ---------- */
-  #fe-mediakit .fe-bio-card { text-align: left; }
-  #fe-mediakit .fe-bio-card .fe-imgph { height: 180px; border-radius: 12px; margin-bottom: 16px; }
-  #fe-mediakit .fe-bio-card h4 { font-size: 16px; color: var(--fe-navy); margin-bottom: 2px; }
-  #fe-mediakit .fe-bio-card .fe-role { font-size: 13px; color: var(--fe-blue); font-weight: 700; margin-bottom: 10px; }
-  #fe-mediakit .fe-bio-card p { font-size: 13px; color: var(--fe-gray); }
-  #fe-mediakit .fe-bio-card .fe-btn { margin-top: 8px; }
-
-  /* ---------- Blog ---------- */
-  #fe-mediakit .fe-blog-card .fe-imgph { height: 150px; margin-bottom: 16px; }
-  #fe-mediakit .fe-tag {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    padding: 4px 10px;
-    border-radius: 20px;
-    margin-bottom: 10px;
-  }
-  #fe-mediakit .fe-tag-sage { background: rgba(121,173,149,0.16); color: var(--fe-sage); }
-  #fe-mediakit .fe-tag-coral { background: rgba(220,117,114,0.14); color: var(--fe-coral); }
-  #fe-mediakit .fe-tag-blue { background: rgba(102,158,191,0.16); color: var(--fe-blue); }
-  #fe-mediakit .fe-blog-card h4 { font-size: 16px; color: var(--fe-navy); }
-  #fe-mediakit .fe-blog-card p { font-size: 13px; color: var(--fe-gray); }
-  #fe-mediakit .fe-blog-card .fe-meta { font-size: 12px; color: var(--fe-gray-light); margin-top: 12px; }
-  #fe-mediakit .fe-blog-cta { text-align: center; margin-top: 36px; }
-
-  /* ---------- Press releases ---------- */
-  #fe-mediakit .fe-pr-item {
-    display: flex;
-    gap: 24px;
-    padding: 24px 0;
-    border-bottom: 1px solid var(--fe-gray-pale);
-  }
-  #fe-mediakit .fe-pr-item:first-child { padding-top: 0; }
-  #fe-mediakit .fe-pr-item:last-child { border-bottom: none; }
-  #fe-mediakit .fe-pr-date {
-    flex-shrink: 0;
-    width: 92px;
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--fe-slate);
-    padding-top: 3px;
-  }
-  #fe-mediakit .fe-pr-body h4 { font-size: 17px; color: var(--fe-navy); }
-  #fe-mediakit .fe-pr-body p { font-size: 14px; color: var(--fe-gray); margin-bottom: 12px; }
-  #fe-mediakit .fe-pr-links { display: flex; gap: 18px; }
-  #fe-mediakit .fe-pr-links a { font-size: 13px; font-weight: 700; color: var(--fe-orange); }
-  #fe-mediakit .fe-pr-links a:hover { text-decoration: underline; }
-
-  /* ---------- High-res images ---------- */
-  #fe-mediakit .fe-gal-item .fe-imgph { height: 160px; margin-bottom: 10px; }
-  #fe-mediakit .fe-gal-item h4 { font-size: 13px; color: var(--fe-navy); margin-bottom: 2px; }
-  #fe-mediakit .fe-gal-item p { font-size: 11px; color: var(--fe-gray-light); margin-bottom: 10px; }
-
-  /* ---------- Media contacts ---------- */
-  #fe-mediakit .fe-contact-card { display: flex; gap: 16px; align-items: flex-start; }
-  #fe-mediakit .fe-contact-avatar {
-    width: 56px; height: 56px; border-radius: 50%; flex-shrink: 0;
-    background: var(--fe-gray-pale);
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 800; color: var(--fe-slate); font-size: 15px;
-  }
-  #fe-mediakit .fe-contact-card h4 { font-size: 15px; color: var(--fe-navy); margin-bottom: 2px; }
-  #fe-mediakit .fe-contact-card .fe-role { font-size: 12px; color: var(--fe-gray); margin-bottom: 8px; }
-  #fe-mediakit .fe-contact-card a.fe-link { font-size: 13px; color: var(--fe-blue); font-weight: 600; display: block; }
-
-  /* ---------- Fact sheet ---------- */
-  #fe-mediakit .fe-fact-card { text-align: center; padding: 28px 16px; }
-  #fe-mediakit .fe-fact-card strong { display: block; font-size: 28px; color: var(--fe-navy); font-weight: 800; }
-  #fe-mediakit .fe-fact-card span { font-size: 12px; color: var(--fe-gray); text-transform: uppercase; letter-spacing: 0.06em; }
-  #fe-mediakit .fe-fact-cta { text-align: center; margin-top: 36px; }
-
-  /* ---------- Footer ---------- */
-  #fe-mediakit .fe-footer {
-    background: var(--fe-black);
-    color: var(--fe-gray-pale);
-    padding: 40px 24px;
-    text-align: center;
-    font-size: 13px;
-  }
-  #fe-mediakit .fe-footer a { color: var(--fe-sky); font-weight: 600; }
-  #fe-mediakit .fe-footer .fe-footer-brand { color: #fff; font-weight: 800; margin-bottom: 8px; }
-
-  /* ---------- Responsive ---------- */
-  @media (max-width: 900px) {
-    #fe-mediakit .fe-grid-4 { grid-template-columns: repeat(2, 1fr); }
-    #fe-mediakit .fe-grid-3 { grid-template-columns: repeat(2, 1fr); }
-    #fe-mediakit .fe-swatches { grid-template-columns: repeat(4, 1fr); }
-    #fe-mediakit .fe-hero-stats { grid-template-columns: repeat(2, 1fr); row-gap: 24px; }
-  }
-  @media (max-width: 700px) {
-    #fe-mediakit .fe-nav-inner { flex-wrap: wrap; }
-    #fe-mediakit .fe-nav-links { display: none; width: 100%; order: 3; flex-direction: column; align-items: stretch; }
-    #fe-mediakit .fe-nav-toggle:checked ~ .fe-nav-links { display: flex; }
-    #fe-mediakit .fe-nav-toggle-label {
-      display: block; cursor: pointer; font-size: 22px; color: var(--fe-navy); line-height: 1;
-      padding: 4px 8px;
-    }
-    #fe-mediakit .fe-grid-2, #fe-mediakit .fe-grid-3, #fe-mediakit .fe-grid-4 { grid-template-columns: 1fr; }
-    #fe-mediakit .fe-dos-donts { grid-template-columns: 1fr; }
-    #fe-mediakit .fe-swatches { grid-template-columns: repeat(3, 1fr); }
-    #fe-mediakit section { padding: 56px 18px; }
-    #fe-mediakit .fe-pr-item { flex-direction: column; gap: 6px; }
-  }
-  @media (min-width: 701px) {
-    #fe-mediakit .fe-nav-toggle-label { display: none; }
-  }
-</style>
-
-<!-- ============ NAV ============ -->
-<nav class="fe-nav">
-  <div class="fe-nav-inner">
-    <div class="fe-nav-brand">Focus<span>Economics</span> <span style="color:var(--fe-gray); font-weight:600;">/ Media Kit</span></div>
-    <input type="checkbox" id="fe-nav-toggle" class="fe-nav-toggle">
-    <label for="fe-nav-toggle" class="fe-nav-toggle-label">&#9776;</label>
-    <div class="fe-nav-links">
-      <a href="#fe-logos">Logos</a>
-      <a href="#fe-brand">Brand Guidelines</a>
-      <a href="#fe-bios">Executive Bios</a>
-      <a href="#fe-blog">Blog</a>
-      <a href="#fe-press">Press Releases</a>
-      <a href="#fe-images">Images</a>
-      <a href="#fe-contacts">Media Contacts</a>
-      <a href="#fe-facts">Fact Sheet</a>
-    </div>
-  </div>
-</nav>
-
-<!-- ============ HERO ============ -->
-<header class="fe-hero">
-  <span class="fe-eyebrow">Media Kit</span>
-  <h1>Everything journalists, partners &amp; press need on FocusEconomics</h1>
-  <p>[Insert one-line company description / tagline here — e.g. "Independent economic analysis, forecasts, and consensus data covering 130+ countries."]</p>
-  <div class="fe-hero-actions">
-    <a href="#fe-facts" class="fe-btn fe-btn-accent">Download Fact Sheet</a>
-    <a href="#fe-contacts" class="fe-btn fe-btn-ghost">Contact Media Team</a>
-  </div>
-  <div class="fe-hero-stats">
-    <div><strong>[XX]</strong><span>Years in Business</span></div>
-    <div><strong>[130+]</strong><span>Countries Covered</span></div>
-    <div><strong>[XX]</strong><span>Team Members</span></div>
-    <div><strong>[City, Country]</strong><span>Headquarters</span></div>
-  </div>
-</header>
-
-<!-- ============ COMPANY LOGOS ============ -->
-<section id="fe-logos">
-  <div class="fe-wrap">
-    <span class="fe-eyebrow">Assets</span>
-    <h2 class="fe-h2">Company Logos</h2>
-    <p class="fe-sub">Approved logo files for press and partner use. Please do not alter colors, proportions, or spacing. See Brand Guidelines below for full usage rules.</p>
-    <div class="fe-grid-3">
-      <div class="fe-card fe-logo-card">
-        <div class="fe-imgph"><div class="fe-imgph-icon">&#128196;</div><div class="fe-imgph-label">Primary Logo</div><div class="fe-imgph-meta">SVG / PNG / EPS</div></div>
-        <h4>Primary (Full Color)</h4>
-        <p>For use on white or light backgrounds.</p>
-        <div class="fe-logo-card-footer">
-          <span style="font-size:11px; color:var(--fe-gray-light);">[filename.svg]</span>
-          <a href="#" class="fe-btn fe-btn-ghost fe-btn-sm">Download</a>
-        </div>
-      </div>
-      <div class="fe-card fe-logo-card">
-        <div class="fe-imgph" style="background-color:var(--fe-navy); background-image:none; border-color:var(--fe-navy);"><div class="fe-imgph-icon" style="color:#fff;">&#128196;</div><div class="fe-imgph-label" style="color:#fff;">Reversed / White Logo</div><div class="fe-imgph-meta" style="color:var(--fe-gray-pale);">SVG / PNG</div></div>
-        <h4>Reversed (White)</h4>
-        <p>For use on dark or colored backgrounds.</p>
-        <div class="fe-logo-card-footer">
-          <span style="font-size:11px; color:var(--fe-gray-light);">[filename.svg]</span>
-          <a href="#" class="fe-btn fe-btn-ghost fe-btn-sm">Download</a>
-        </div>
-      </div>
-      <div class="fe-card fe-logo-card">
-        <div class="fe-imgph"><div class="fe-imgph-icon">&#128196;</div><div class="fe-imgph-label">Icon / Mark Only</div><div class="fe-imgph-meta">SVG / PNG</div></div>
-        <h4>Icon / Favicon Mark</h4>
-        <p>For social avatars and small placements.</p>
-        <div class="fe-logo-card-footer">
-          <span style="font-size:11px; color:var(--fe-gray-light);">[filename.svg]</span>
-          <a href="#" class="fe-btn fe-btn-ghost fe-btn-sm">Download</a>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center; margin-top:28px;">
-      <a href="#" class="fe-btn fe-btn-primary">Download Full Logo Pack (.zip)</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ BRAND GUIDELINES ============ -->
-<section id="fe-brand" class="fe-alt">
-  <div class="fe-wrap">
-    <span class="fe-eyebrow">Assets</span>
-    <h2 class="fe-h2">Brand Guidelines</h2>
-    <p class="fe-sub">Our core color palette, typography, and logo usage rules — the essentials for representing FocusEconomics accurately.</p>
-
-    <h4 style="font-size:13px; text-transform:uppercase; letter-spacing:0.06em; color:var(--fe-slate); margin-bottom:14px;">Color Palette</h4>
-    <div class="fe-swatches">
-      <div class="fe-swatch"><div class="fe-swatch-color" style="background:#13234B;"></div><div class="fe-swatch-label">#13234B</div></div>
-      <div class="fe-swatch"><div class="fe-swatch-color" style="background:#3E6389;"></div><div class="fe-swatch-label">#3E6389</div></div>
-      <div class="fe-swatch"><div class="fe-swatch-color" style="background:#669EBF;"></div><div class="fe-swatch-label">#669EBF</div></div>
-      <div class="fe-swatch"><div class="fe-swatch-color" style="background:#6CC3E5;"></div><div class="fe-swatch-label">#6CC3E5</div></div>
-      <div class="fe-swatch"><div class="fe-swatch-color" style="background:#EC9446;"></div><div class="fe-swatch-label">#EC9446</div></div>
-      <div class="fe-swatch"><div class="fe-swatch-color" style="background:#F9D555;"></div><div class="fe-swatch-label">#F9D555</div></div>
-      <div class="fe-swatch"><div class="fe-swatch-color" style="background:#DC7572;"></div><div class="fe-swatch-label">#DC7572</div></div>
-      <div class="fe-swatch"><div class="fe-swatch-color" style="background:#79AD95;"></div><div class="fe-swatch-label">#79AD95</div></div>
-      <div class="fe-swatch"><div class="fe-swatch-color" style="background:#808080;"></div><div class="fe-swatch-label">#808080</div></div>
-      <div class="fe-swatch"><div class="fe-swatch-color" style="background:#B5B7C1;"></div><div class="fe-swatch-label">#B5B7C1</div></div>
-      <div class="fe-swatch"><div class="fe-swatch-color" style="background:#DADCE6;"></div><div class="fe-swatch-label">#DADCE6</div></div>
-      <div class="fe-swatch"><div class="fe-swatch-color" style="background:#F8FCFD; border-bottom:1px solid #eee;"></div><div class="fe-swatch-label">#F8FCFD</div></div>
-      <div class="fe-swatch"><div class="fe-swatch-color" style="background:#001D27;"></div><div class="fe-swatch-label">#001D27</div></div>
+    <!-- Quick jump links -->
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px;">
+      <a href="#fe-logos" style="font-size:12px;font-weight:600;color:#FFFFFF;background:rgba(255,255,255,0.12);padding:7px 14px;border-radius:20px;text-decoration:none;">Logos</a>
+      <a href="#fe-brand" style="font-size:12px;font-weight:600;color:#FFFFFF;background:rgba(255,255,255,0.12);padding:7px 14px;border-radius:20px;text-decoration:none;">Brand Guidelines</a>
+      <a href="#fe-bios" style="font-size:12px;font-weight:600;color:#FFFFFF;background:rgba(255,255,255,0.12);padding:7px 14px;border-radius:20px;text-decoration:none;">Executive Bios</a>
+      <a href="#fe-blog" style="font-size:12px;font-weight:600;color:#FFFFFF;background:rgba(255,255,255,0.12);padding:7px 14px;border-radius:20px;text-decoration:none;">Blog</a>
+      <a href="#fe-press" style="font-size:12px;font-weight:600;color:#FFFFFF;background:rgba(255,255,255,0.12);padding:7px 14px;border-radius:20px;text-decoration:none;">Press Releases</a>
+      <a href="#fe-images" style="font-size:12px;font-weight:600;color:#FFFFFF;background:rgba(255,255,255,0.12);padding:7px 14px;border-radius:20px;text-decoration:none;">Images</a>
+      <a href="#fe-contacts" style="font-size:12px;font-weight:600;color:#FFFFFF;background:rgba(255,255,255,0.12);padding:7px 14px;border-radius:20px;text-decoration:none;">Media Contacts</a>
+      <a href="#fe-facts" style="font-size:12px;font-weight:600;color:#FFFFFF;background:rgba(255,255,255,0.12);padding:7px 14px;border-radius:20px;text-decoration:none;">Fact Sheet</a>
     </div>
 
-    <div class="fe-card" style="margin-bottom:32px;">
-      <h4 style="font-size:13px; text-transform:uppercase; letter-spacing:0.06em; color:var(--fe-slate); margin-bottom:4px;">Typography</h4>
-      <div class="fe-type-row">
-        <span class="fe-type-tag">Headings</span>
-        <span style="font-size:26px; font-weight:800; color:var(--fe-navy);">[Heading Typeface Name]</span>
+    <!-- Stats strip -->
+    <div style="display:flex;flex-wrap:wrap;gap:14px;">
+      <div style="flex:1 1 150px;background:#1E3760;border-radius:10px;padding:18px 20px;box-sizing:border-box;">
+        <div style="font-family:Georgia,serif;font-size:26px;color:#FFFFFF;font-weight:700;">[XX]</div>
+        <div style="font-size:12px;color:#B5B7C1;letter-spacing:0.5px;">Years in business</div>
       </div>
-      <div class="fe-type-row">
-        <span class="fe-type-tag">Body</span>
-        <span style="font-size:16px; color:var(--fe-black);">[Body Typeface Name] — used for paragraphs, captions, and UI text.</span>
+      <div style="flex:1 1 150px;background:#1E3760;border-radius:10px;padding:18px 20px;box-sizing:border-box;">
+        <div style="font-family:Georgia,serif;font-size:26px;color:#FFFFFF;font-weight:700;">[130+]</div>
+        <div style="font-size:12px;color:#B5B7C1;letter-spacing:0.5px;">Countries covered</div>
       </div>
-      <div class="fe-type-row">
-        <span class="fe-type-tag">Data / Mono</span>
-        <span style="font-size:15px; font-family:monospace; color:var(--fe-black);">[Monospace Typeface Name] — used in charts and data tables.</span>
+      <div style="flex:1 1 150px;background:#1E3760;border-radius:10px;padding:18px 20px;box-sizing:border-box;">
+        <div style="font-family:Georgia,serif;font-size:26px;color:#FFFFFF;font-weight:700;">[XX]</div>
+        <div style="font-size:12px;color:#B5B7C1;letter-spacing:0.5px;">Team members</div>
       </div>
-    </div>
-
-    <h4 style="font-size:13px; text-transform:uppercase; letter-spacing:0.06em; color:var(--fe-slate);">Logo Usage</h4>
-    <div class="fe-dos-donts">
-      <div class="fe-do">
-        <h4>&#10003; Do</h4>
-        <div class="fe-imgph"><div class="fe-imgph-label">Clearspace &amp; correct proportions example</div></div>
-      </div>
-      <div class="fe-dont">
-        <h4>&#10007; Don't</h4>
-        <div class="fe-imgph"><div class="fe-imgph-label">Stretching, recoloring, or low-contrast example</div></div>
-      </div>
-    </div>
-
-    <div style="text-align:center; margin-top:32px;">
-      <a href="#" class="fe-btn fe-btn-primary">Download Full Brand Guidelines (PDF)</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ EXECUTIVE BIOS ============ -->
-<section id="fe-bios">
-  <div class="fe-wrap">
-    <span class="fe-eyebrow">People</span>
-    <h2 class="fe-h2">Executive Bios</h2>
-    <p class="fe-sub">Leadership team bios and headshots approved for media use.</p>
-    <div class="fe-grid-4">
-      <div class="fe-card fe-bio-card">
-        <div class="fe-imgph"><div class="fe-imgph-icon">&#128100;</div><div class="fe-imgph-label">Headshot</div></div>
-        <h4>[Executive Name]</h4>
-        <div class="fe-role">[Chief Executive Officer]</div>
-        <p>[Two-to-three sentence bio: background, tenure, and area of expertise goes here.]</p>
-        <a href="#" class="fe-btn fe-btn-ghost fe-btn-sm">Download Headshot</a>
-      </div>
-      <div class="fe-card fe-bio-card">
-        <div class="fe-imgph"><div class="fe-imgph-icon">&#128100;</div><div class="fe-imgph-label">Headshot</div></div>
-        <h4>[Executive Name]</h4>
-        <div class="fe-role">[Chief Economist]</div>
-        <p>[Two-to-three sentence bio: background, tenure, and area of expertise goes here.]</p>
-        <a href="#" class="fe-btn fe-btn-ghost fe-btn-sm">Download Headshot</a>
-      </div>
-      <div class="fe-card fe-bio-card">
-        <div class="fe-imgph"><div class="fe-imgph-icon">&#128100;</div><div class="fe-imgph-label">Headshot</div></div>
-        <h4>[Executive Name]</h4>
-        <div class="fe-role">[Head of Research]</div>
-        <p>[Two-to-three sentence bio: background, tenure, and area of expertise goes here.]</p>
-        <a href="#" class="fe-btn fe-btn-ghost fe-btn-sm">Download Headshot</a>
-      </div>
-      <div class="fe-card fe-bio-card">
-        <div class="fe-imgph"><div class="fe-imgph-icon">&#128100;</div><div class="fe-imgph-label">Headshot</div></div>
-        <h4>[Executive Name]</h4>
-        <div class="fe-role">[VP of Communications]</div>
-        <p>[Two-to-three sentence bio: background, tenure, and area of expertise goes here.]</p>
-        <a href="#" class="fe-btn fe-btn-ghost fe-btn-sm">Download Headshot</a>
+      <div style="flex:1 1 150px;background:#1E3760;border-radius:10px;padding:18px 20px;box-sizing:border-box;">
+        <div style="font-family:Georgia,serif;font-size:26px;color:#FFFFFF;font-weight:700;">24h</div>
+        <div style="font-size:12px;color:#B5B7C1;letter-spacing:0.5px;">Media reply window</div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- ============ ECONOMICS BLOG ============ -->
-<section id="fe-blog" class="fe-alt">
-  <div class="fe-wrap">
-    <span class="fe-eyebrow">Insights</span>
-    <h2 class="fe-h2">Economics Blog</h2>
-    <p class="fe-sub">Featured analysis and commentary from our research team — free for press to reference and cite with attribution.</p>
-    <div class="fe-grid-3">
-      <div class="fe-card fe-blog-card">
-        <div class="fe-imgph"><div class="fe-imgph-icon">&#128200;</div><div class="fe-imgph-label">Chart / Cover Image</div></div>
-        <span class="fe-tag fe-tag-blue">Macroeconomics</span>
-        <h4>[Blog post title placeholder]</h4>
-        <p>[One to two sentence excerpt summarizing the post's key takeaway.]</p>
-        <div class="fe-meta">[Month DD, YYYY] &middot; [X] min read</div>
+  <!-- ===== MEDIA CONTACTS ===== -->
+  <div id="fe-contacts" style="background:#FFFFFF;border:1px solid #DADCE6;border-radius:14px;padding:32px;margin:0 0 20px;">
+    <div style="color:#3E6389;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin:0 0 20px;">Media Contacts</div>
+    <div style="display:flex;flex-wrap:wrap;gap:20px;">
+
+      <div style="flex:1 1 260px;background:#F8FCFD;border-radius:10px;padding:20px;box-sizing:border-box;">
+        <div style="font-family:Georgia,serif;font-size:18px;color:#13234B;font-weight:700;margin:0 0 4px;">[REPLACE Contact name]</div>
+        <div style="font-size:13px;color:#808080;margin:0 0 12px;">Media &amp; Press Relations</div>
+        <div style="font-size:14px;margin:0 0 6px;"><a href="mailto:[REPLACE press@focuseconomics.com]" style="color:#13234B;text-decoration:none;font-weight:600;">[REPLACE press@focuseconomics.com]</a></div>
+        <div style="font-size:14px;color:#001D27;">[REPLACE +1 (000) 000-0000]</div>
       </div>
-      <div class="fe-card fe-blog-card">
-        <div class="fe-imgph"><div class="fe-imgph-icon">&#128200;</div><div class="fe-imgph-label">Chart / Cover Image</div></div>
-        <span class="fe-tag fe-tag-sage">Trade &amp; Markets</span>
-        <h4>[Blog post title placeholder]</h4>
-        <p>[One to two sentence excerpt summarizing the post's key takeaway.]</p>
-        <div class="fe-meta">[Month DD, YYYY] &middot; [X] min read</div>
+
+      <div style="flex:1 1 260px;background:#F8FCFD;border-radius:10px;padding:20px;box-sizing:border-box;">
+        <div style="font-family:Georgia,serif;font-size:18px;color:#13234B;font-weight:700;margin:0 0 4px;">[REPLACE Contact name]</div>
+        <div style="font-size:13px;color:#808080;margin:0 0 12px;">General Media Inquiries</div>
+        <div style="font-size:14px;margin:0 0 6px;"><a href="mailto:[REPLACE media@focuseconomics.com]" style="color:#13234B;text-decoration:none;font-weight:600;">[REPLACE media@focuseconomics.com]</a></div>
+        <div style="font-size:14px;color:#001D27;">[REPLACE +1 (000) 000-0000]</div>
       </div>
-      <div class="fe-card fe-blog-card">
-        <div class="fe-imgph"><div class="fe-imgph-icon">&#128200;</div><div class="fe-imgph-label">Chart / Cover Image</div></div>
-        <span class="fe-tag fe-tag-coral">Forecasts</span>
-        <h4>[Blog post title placeholder]</h4>
-        <p>[One to two sentence excerpt summarizing the post's key takeaway.]</p>
-        <div class="fe-meta">[Month DD, YYYY] &middot; [X] min read</div>
-      </div>
+
     </div>
-    <div class="fe-blog-cta">
-      <a href="#" class="fe-btn fe-btn-primary">Visit the Full Blog &#8594;</a>
+    <p style="font-size:13px;color:#808080;margin:16px 0 0;">On deadline? We reply to journalist requests within 24 hours and can provide data, charts, and quotes cleared for republication. Attribution with a link back is all we ask in return.</p>
+  </div>
+
+  <!-- ===== COMPANY FACT SHEET ===== -->
+  <div id="fe-facts" style="background:#FFFFFF;border:1px solid #DADCE6;border-radius:14px;padding:32px;margin:0 0 20px;">
+    <h2 style="font-family:Georgia,serif;font-size:22px;color:#13234B;font-weight:700;margin:0 0 20px;">Company fact sheet</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;">
+
+      <div style="flex:1 1 220px;border-left:3px solid #669EBF;padding:2px 0 2px 16px;box-sizing:border-box;">
+        <div style="font-size:12px;color:#808080;text-transform:uppercase;letter-spacing:1px;margin:0 0 4px;">What we do</div>
+        <div style="font-size:15px;color:#001D27;">[REPLACE one-line description of the company's core business.]</div>
+      </div>
+
+      <div style="flex:1 1 220px;border-left:3px solid #669EBF;padding:2px 0 2px 16px;box-sizing:border-box;">
+        <div style="font-size:12px;color:#808080;text-transform:uppercase;letter-spacing:1px;margin:0 0 4px;">Headquarters</div>
+        <div style="font-size:15px;color:#001D27;">[REPLACE City, Country]</div>
+      </div>
+
+      <div style="flex:1 1 220px;border-left:3px solid #669EBF;padding:2px 0 2px 16px;box-sizing:border-box;">
+        <div style="font-size:12px;color:#808080;text-transform:uppercase;letter-spacing:1px;margin:0 0 4px;">Founded</div>
+        <div style="font-size:15px;color:#001D27;">[REPLACE YYYY]</div>
+      </div>
+
+      <div style="flex:1 1 220px;border-left:3px solid #669EBF;padding:2px 0 2px 16px;box-sizing:border-box;">
+        <div style="font-size:12px;color:#808080;text-transform:uppercase;letter-spacing:1px;margin:0 0 4px;">Flagship product</div>
+        <div style="font-size:15px;color:#001D27;">[REPLACE flagship product / service name and one-line description.]</div>
+      </div>
+
+      <div style="flex:1 1 220px;border-left:3px solid #669EBF;padding:2px 0 2px 16px;box-sizing:border-box;">
+        <div style="font-size:12px;color:#808080;text-transform:uppercase;letter-spacing:1px;margin:0 0 4px;">Employees</div>
+        <div style="font-size:15px;color:#001D27;">[REPLACE headcount]</div>
+      </div>
+
+      <div style="flex:1 1 220px;border-left:3px solid #669EBF;padding:2px 0 2px 16px;box-sizing:border-box;">
+        <div style="font-size:12px;color:#808080;text-transform:uppercase;letter-spacing:1px;margin:0 0 4px;">Leadership</div>
+        <div style="font-size:15px;color:#001D27;">[REPLACE CEO / founder name and title]</div>
+      </div>
+
+    </div>
+    <div style="margin:24px 0 0;">
+      <a href="[REPLACE link to fact sheet PDF]" style="display:inline-block;background:#13234B;color:#FFFFFF;text-decoration:none;padding:11px 20px;border-radius:8px;font-size:14px;font-weight:600;">Download fact sheet (PDF)</a>
     </div>
   </div>
-</section>
 
-<!-- ============ PRESS RELEASES ============ -->
-<section id="fe-press">
-  <div class="fe-wrap">
-    <span class="fe-eyebrow">News</span>
-    <h2 class="fe-h2">Press Releases</h2>
-    <p class="fe-sub">The latest official announcements from FocusEconomics.</p>
-    <div class="fe-card">
-      <div class="fe-pr-item">
-        <div class="fe-pr-date">[Mon DD,<br>YYYY]</div>
-        <div class="fe-pr-body">
-          <h4>[Press release headline placeholder]</h4>
-          <p>[One to two sentence summary of the announcement.]</p>
-          <div class="fe-pr-links">
-            <a href="#">Read Full Release &#8594;</a>
-            <a href="#">Download PDF</a>
+  <!-- ===== EXECUTIVE BIOS ===== -->
+  <div id="fe-bios" style="background:#FFFFFF;border:1px solid #DADCE6;border-radius:14px;padding:32px;margin:0 0 20px;">
+    <h2 style="font-family:Georgia,serif;font-size:22px;color:#13234B;font-weight:700;margin:0 0 6px;">Executive bios</h2>
+    <p style="font-size:14px;color:#808080;margin:0 0 24px;">Available for interviews and expert commentary. Contact the media desk to arrange.</p>
+
+    <div style="display:flex;flex-wrap:wrap;gap:20px;">
+
+      <!-- Bio card (duplicate this whole block for each executive) -->
+      <div style="flex:1 1 260px;background:#F8FCFD;border-radius:12px;padding:24px;box-sizing:border-box;">
+        <div style="display:flex;gap:16px;align-items:center;margin:0 0 14px;">
+          <img src="[REPLACE headshot URL]" alt="[REPLACE name]" style="width:64px;height:64px;border-radius:50%;object-fit:cover;display:block;background:#DADCE6;" />
+          <div>
+            <div style="font-family:Georgia,serif;font-size:17px;color:#13234B;font-weight:700;">[REPLACE Name]</div>
+            <div style="font-size:13px;color:#669EBF;font-weight:600;">[REPLACE Chief Executive Officer]</div>
           </div>
         </div>
+        <p style="font-size:14px;color:#001D27;margin:0;">[REPLACE 2–3 sentence bio: background, tenure, area of expertise.]</p>
       </div>
-      <div class="fe-pr-item">
-        <div class="fe-pr-date">[Mon DD,<br>YYYY]</div>
-        <div class="fe-pr-body">
-          <h4>[Press release headline placeholder]</h4>
-          <p>[One to two sentence summary of the announcement.]</p>
-          <div class="fe-pr-links">
-            <a href="#">Read Full Release &#8594;</a>
-            <a href="#">Download PDF</a>
+
+      <div style="flex:1 1 260px;background:#F8FCFD;border-radius:12px;padding:24px;box-sizing:border-box;">
+        <div style="display:flex;gap:16px;align-items:center;margin:0 0 14px;">
+          <img src="[REPLACE headshot URL]" alt="[REPLACE name]" style="width:64px;height:64px;border-radius:50%;object-fit:cover;display:block;background:#DADCE6;" />
+          <div>
+            <div style="font-family:Georgia,serif;font-size:17px;color:#13234B;font-weight:700;">[REPLACE Name]</div>
+            <div style="font-size:13px;color:#669EBF;font-weight:600;">[REPLACE Chief Economist]</div>
           </div>
         </div>
+        <p style="font-size:14px;color:#001D27;margin:0;">[REPLACE 2–3 sentence bio.]</p>
       </div>
-      <div class="fe-pr-item">
-        <div class="fe-pr-date">[Mon DD,<br>YYYY]</div>
-        <div class="fe-pr-body">
-          <h4>[Press release headline placeholder]</h4>
-          <p>[One to two sentence summary of the announcement.]</p>
-          <div class="fe-pr-links">
-            <a href="#">Read Full Release &#8594;</a>
-            <a href="#">Download PDF</a>
+
+      <div style="flex:1 1 260px;background:#F8FCFD;border-radius:12px;padding:24px;box-sizing:border-box;">
+        <div style="display:flex;gap:16px;align-items:center;margin:0 0 14px;">
+          <img src="[REPLACE headshot URL]" alt="[REPLACE name]" style="width:64px;height:64px;border-radius:50%;object-fit:cover;display:block;background:#DADCE6;" />
+          <div>
+            <div style="font-family:Georgia,serif;font-size:17px;color:#13234B;font-weight:700;">[REPLACE Name]</div>
+            <div style="font-size:13px;color:#669EBF;font-weight:600;">[REPLACE Head of Research]</div>
           </div>
         </div>
+        <p style="font-size:14px;color:#001D27;margin:0;">[REPLACE 2–3 sentence bio.]</p>
       </div>
-    </div>
-    <div style="text-align:center; margin-top:28px;">
-      <a href="#" class="fe-btn fe-btn-ghost">View Press Release Archive</a>
-    </div>
-  </div>
-</section>
 
-<!-- ============ HIGH-RESOLUTION IMAGES ============ -->
-<section id="fe-images" class="fe-alt">
-  <div class="fe-wrap">
-    <span class="fe-eyebrow">Assets</span>
-    <h2 class="fe-h2">High-Resolution Images</h2>
-    <p class="fe-sub">Approved photography and graphics for editorial use. Click through for full-resolution downloads.</p>
-    <div class="fe-grid-4">
-      <div class="fe-gal-item">
-        <div class="fe-imgph"><div class="fe-imgph-icon">&#127970;</div><div class="fe-imgph-label">Headquarters</div></div>
-        <h4>Company Headquarters</h4>
-        <p>[XXXX &times; XXXX px]</p>
-        <a href="#" class="fe-btn fe-btn-ghost fe-btn-sm">Download</a>
-      </div>
-      <div class="fe-gal-item">
-        <div class="fe-imgph"><div class="fe-imgph-icon">&#128101;</div><div class="fe-imgph-label">Team Photo</div></div>
-        <h4>Leadership Team</h4>
-        <p>[XXXX &times; XXXX px]</p>
-        <a href="#" class="fe-btn fe-btn-ghost fe-btn-sm">Download</a>
-      </div>
-      <div class="fe-gal-item">
-        <div class="fe-imgph"><div class="fe-imgph-icon">&#128202;</div><div class="fe-imgph-label">Product / Dashboard</div></div>
-        <h4>Data Platform Screenshot</h4>
-        <p>[XXXX &times; XXXX px]</p>
-        <a href="#" class="fe-btn fe-btn-ghost fe-btn-sm">Download</a>
-      </div>
-      <div class="fe-gal-item">
-        <div class="fe-imgph"><div class="fe-imgph-icon">&#127917;</div><div class="fe-imgph-label">Event Photo</div></div>
-        <h4>Conference / Event</h4>
-        <p>[XXXX &times; XXXX px]</p>
-        <a href="#" class="fe-btn fe-btn-ghost fe-btn-sm">Download</a>
-      </div>
-    </div>
-    <div style="text-align:center; margin-top:28px;">
-      <a href="#" class="fe-btn fe-btn-primary">Download Full Image Library (.zip)</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ MEDIA CONTACTS ============ -->
-<section id="fe-contacts">
-  <div class="fe-wrap">
-    <span class="fe-eyebrow">Get in touch</span>
-    <h2 class="fe-h2">Media Contacts</h2>
-    <p class="fe-sub">For interviews, data requests, and press inquiries, please reach out directly.</p>
-    <div class="fe-grid-2">
-      <div class="fe-card fe-contact-card">
-        <div class="fe-contact-avatar">[XX]</div>
-        <div>
-          <h4>[Contact Name]</h4>
-          <div class="fe-role">Media &amp; Press Relations</div>
-          <a class="fe-link" href="mailto:press@example.com">press@[company-domain].com</a>
-          <a class="fe-link" href="tel:+10000000000">[+1 (000) 000-0000]</a>
+      <div style="flex:1 1 260px;background:#F8FCFD;border-radius:12px;padding:24px;box-sizing:border-box;">
+        <div style="display:flex;gap:16px;align-items:center;margin:0 0 14px;">
+          <img src="[REPLACE headshot URL]" alt="[REPLACE name]" style="width:64px;height:64px;border-radius:50%;object-fit:cover;display:block;background:#DADCE6;" />
+          <div>
+            <div style="font-family:Georgia,serif;font-size:17px;color:#13234B;font-weight:700;">[REPLACE Name]</div>
+            <div style="font-size:13px;color:#669EBF;font-weight:600;">[REPLACE VP of Communications]</div>
+          </div>
         </div>
+        <p style="font-size:14px;color:#001D27;margin:0;">[REPLACE 2–3 sentence bio.]</p>
       </div>
-      <div class="fe-card fe-contact-card">
-        <div class="fe-contact-avatar">[XX]</div>
-        <div>
-          <h4>[Contact Name]</h4>
-          <div class="fe-role">General Media Inquiries</div>
-          <a class="fe-link" href="mailto:media@example.com">media@[company-domain].com</a>
-          <a class="fe-link" href="tel:+10000000000">[+1 (000) 000-0000]</a>
+
+    </div>
+  </div>
+
+  <!-- ===== COMPANY LOGOS ===== -->
+  <div id="fe-logos" style="background:#FFFFFF;border:1px solid #DADCE6;border-radius:14px;padding:32px;margin:0 0 20px;">
+    <h2 style="font-family:Georgia,serif;font-size:22px;color:#13234B;font-weight:700;margin:0 0 6px;">Company logos</h2>
+    <p style="font-size:14px;color:#808080;margin:0 0 24px;">Approved logo files for press and partner use. Please do not alter colors, proportions, or spacing — see Brand Guidelines below for full usage rules.</p>
+
+    <div style="display:flex;flex-wrap:wrap;gap:16px;">
+
+      <div style="flex:1 1 220px;border:1px solid #DADCE6;border-radius:12px;padding:20px;box-sizing:border-box;">
+        <div style="height:100px;border:2px dashed #B5B7C1;border-radius:8px;display:flex;align-items:center;justify-content:center;margin:0 0 14px;background:#F8FCFD;">
+          <img src="[REPLACE primary logo URL]" alt="Primary logo" style="max-width:80%;max-height:70px;display:block;" />
         </div>
+        <div style="font-family:Georgia,serif;font-size:15px;color:#13234B;font-weight:700;margin:0 0 4px;">Primary (Full Color)</div>
+        <div style="font-size:13px;color:#808080;margin:0 0 14px;">For use on white or light backgrounds.</div>
+        <a href="[REPLACE logo file URL]" style="display:inline-block;background:transparent;border:1px solid #DADCE6;color:#13234B;text-decoration:none;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600;">Download</a>
+      </div>
+
+      <div style="flex:1 1 220px;border:1px solid #DADCE6;border-radius:12px;padding:20px;box-sizing:border-box;">
+        <div style="height:100px;border:2px dashed #13234B;border-radius:8px;display:flex;align-items:center;justify-content:center;margin:0 0 14px;background:#13234B;">
+          <img src="[REPLACE reversed/white logo URL]" alt="Reversed logo" style="max-width:80%;max-height:70px;display:block;" />
+        </div>
+        <div style="font-family:Georgia,serif;font-size:15px;color:#13234B;font-weight:700;margin:0 0 4px;">Reversed (White)</div>
+        <div style="font-size:13px;color:#808080;margin:0 0 14px;">For use on dark or colored backgrounds.</div>
+        <a href="[REPLACE logo file URL]" style="display:inline-block;background:transparent;border:1px solid #DADCE6;color:#13234B;text-decoration:none;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600;">Download</a>
+      </div>
+
+      <div style="flex:1 1 220px;border:1px solid #DADCE6;border-radius:12px;padding:20px;box-sizing:border-box;">
+        <div style="height:100px;border:2px dashed #B5B7C1;border-radius:8px;display:flex;align-items:center;justify-content:center;margin:0 0 14px;background:#F8FCFD;">
+          <img src="[REPLACE icon/mark URL]" alt="Icon mark" style="max-width:50%;max-height:70px;display:block;" />
+        </div>
+        <div style="font-family:Georgia,serif;font-size:15px;color:#13234B;font-weight:700;margin:0 0 4px;">Icon / Mark Only</div>
+        <div style="font-size:13px;color:#808080;margin:0 0 14px;">For social avatars and small placements.</div>
+        <a href="[REPLACE logo file URL]" style="display:inline-block;background:transparent;border:1px solid #DADCE6;color:#13234B;text-decoration:none;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600;">Download</a>
+      </div>
+
+    </div>
+    <div style="margin:20px 0 0;">
+      <a href="[REPLACE logo pack ZIP URL]" style="display:inline-block;background:#13234B;color:#FFFFFF;text-decoration:none;padding:11px 20px;border-radius:8px;font-size:14px;font-weight:600;">Download full logo pack (.zip)</a>
+    </div>
+  </div>
+
+  <!-- ===== BRAND GUIDELINES ===== -->
+  <div id="fe-brand" style="background:#FFFFFF;border:1px solid #DADCE6;border-radius:14px;padding:32px;margin:0 0 20px;">
+    <h2 style="font-family:Georgia,serif;font-size:22px;color:#13234B;font-weight:700;margin:0 0 6px;">Brand guidelines</h2>
+    <p style="font-size:14px;color:#808080;margin:0 0 20px;">Our core color palette and typography — the essentials for representing FocusEconomics accurately.</p>
+
+    <div style="font-size:12px;color:#3E6389;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin:0 0 10px;">Color palette</div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px;">
+      <div style="width:70px;"><div style="height:56px;border-radius:8px 8px 0 0;background:#13234B;"></div><div style="font-size:10px;text-align:center;padding:5px 0;border:1px solid #DADCE6;border-top:none;border-radius:0 0 8px 8px;color:#13234B;font-weight:700;">#13234B</div></div>
+      <div style="width:70px;"><div style="height:56px;border-radius:8px 8px 0 0;background:#3E6389;"></div><div style="font-size:10px;text-align:center;padding:5px 0;border:1px solid #DADCE6;border-top:none;border-radius:0 0 8px 8px;color:#13234B;font-weight:700;">#3E6389</div></div>
+      <div style="width:70px;"><div style="height:56px;border-radius:8px 8px 0 0;background:#669EBF;"></div><div style="font-size:10px;text-align:center;padding:5px 0;border:1px solid #DADCE6;border-top:none;border-radius:0 0 8px 8px;color:#13234B;font-weight:700;">#669EBF</div></div>
+      <div style="width:70px;"><div style="height:56px;border-radius:8px 8px 0 0;background:#6CC3E5;"></div><div style="font-size:10px;text-align:center;padding:5px 0;border:1px solid #DADCE6;border-top:none;border-radius:0 0 8px 8px;color:#13234B;font-weight:700;">#6CC3E5</div></div>
+      <div style="width:70px;"><div style="height:56px;border-radius:8px 8px 0 0;background:#EC9446;"></div><div style="font-size:10px;text-align:center;padding:5px 0;border:1px solid #DADCE6;border-top:none;border-radius:0 0 8px 8px;color:#13234B;font-weight:700;">#EC9446</div></div>
+      <div style="width:70px;"><div style="height:56px;border-radius:8px 8px 0 0;background:#F9D555;"></div><div style="font-size:10px;text-align:center;padding:5px 0;border:1px solid #DADCE6;border-top:none;border-radius:0 0 8px 8px;color:#13234B;font-weight:700;">#F9D555</div></div>
+      <div style="width:70px;"><div style="height:56px;border-radius:8px 8px 0 0;background:#DC7572;"></div><div style="font-size:10px;text-align:center;padding:5px 0;border:1px solid #DADCE6;border-top:none;border-radius:0 0 8px 8px;color:#13234B;font-weight:700;">#DC7572</div></div>
+      <div style="width:70px;"><div style="height:56px;border-radius:8px 8px 0 0;background:#79AD95;"></div><div style="font-size:10px;text-align:center;padding:5px 0;border:1px solid #DADCE6;border-top:none;border-radius:0 0 8px 8px;color:#13234B;font-weight:700;">#79AD95</div></div>
+      <div style="width:70px;"><div style="height:56px;border-radius:8px 8px 0 0;background:#808080;"></div><div style="font-size:10px;text-align:center;padding:5px 0;border:1px solid #DADCE6;border-top:none;border-radius:0 0 8px 8px;color:#13234B;font-weight:700;">#808080</div></div>
+      <div style="width:70px;"><div style="height:56px;border-radius:8px 8px 0 0;background:#B5B7C1;"></div><div style="font-size:10px;text-align:center;padding:5px 0;border:1px solid #DADCE6;border-top:none;border-radius:0 0 8px 8px;color:#13234B;font-weight:700;">#B5B7C1</div></div>
+      <div style="width:70px;"><div style="height:56px;border-radius:8px 8px 0 0;background:#DADCE6;"></div><div style="font-size:10px;text-align:center;padding:5px 0;border:1px solid #DADCE6;border-top:none;border-radius:0 0 8px 8px;color:#13234B;font-weight:700;">#DADCE6</div></div>
+      <div style="width:70px;"><div style="height:56px;border-radius:8px 8px 0 0;background:#F8FCFD;"></div><div style="font-size:10px;text-align:center;padding:5px 0;border:1px solid #DADCE6;border-top:none;border-radius:0 0 8px 8px;color:#13234B;font-weight:700;">#F8FCFD</div></div>
+      <div style="width:70px;"><div style="height:56px;border-radius:8px 8px 0 0;background:#001D27;"></div><div style="font-size:10px;text-align:center;padding:5px 0;border:1px solid #DADCE6;border-top:none;border-radius:0 0 8px 8px;color:#13234B;font-weight:700;">#001D27</div></div>
+    </div>
+
+    <div style="background:#F8FCFD;border-radius:10px;padding:20px;margin:0 0 24px;">
+      <div style="font-size:12px;color:#3E6389;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin:0 0 12px;">Typography</div>
+      <div style="border-bottom:1px solid #DADCE6;padding:0 0 12px;margin:0 0 12px;">
+        <span style="font-size:11px;color:#808080;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Headings —</span>
+        <span style="font-family:Georgia,serif;font-size:20px;font-weight:700;color:#13234B;"> [REPLACE Heading Typeface Name]</span>
+      </div>
+      <div>
+        <span style="font-size:11px;color:#808080;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Body —</span>
+        <span style="font-size:15px;color:#001D27;"> [REPLACE Body Typeface Name], used for paragraphs, captions, and UI text.</span>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ============ COMPANY FACT SHEET ============ -->
-<section id="fe-facts" class="fe-alt">
-  <div class="fe-wrap">
-    <span class="fe-eyebrow">Overview</span>
-    <h2 class="fe-h2">Company Fact Sheet</h2>
-    <p class="fe-sub">Key facts and figures about FocusEconomics at a glance.</p>
-    <div class="fe-grid-4">
-      <div class="fe-card fe-fact-card"><strong>[YYYY]</strong><span>Founded</span></div>
-      <div class="fe-card fe-fact-card"><strong>[130+]</strong><span>Countries Covered</span></div>
-      <div class="fe-card fe-fact-card"><strong>[XX]</strong><span>Employees</span></div>
-      <div class="fe-card fe-fact-card"><strong>[City, Country]</strong><span>Headquarters</span></div>
-    </div>
-    <div class="fe-fact-cta">
-      <a href="#" class="fe-btn fe-btn-primary">Download One-Page Fact Sheet (PDF)</a>
+    <div style="margin:0;">
+      <a href="[REPLACE brand guidelines PDF URL]" style="display:inline-block;background:#13234B;color:#FFFFFF;text-decoration:none;padding:11px 20px;border-radius:8px;font-size:14px;font-weight:600;">Download full brand guidelines (PDF)</a>
     </div>
   </div>
-</section>
 
-<!-- ============ FOOTER ============ -->
-<footer class="fe-footer">
-  <div class="fe-footer-brand">FocusEconomics</div>
-  <p>This media kit is provided for editorial and press use. For licensing or usage questions, contact <a href="mailto:press@example.com">press@[company-domain].com</a>.</p>
-  <p>&copy; [YYYY] FocusEconomics. All rights reserved.</p>
-</footer>
+  <!-- ===== HIGH-RESOLUTION IMAGES ===== -->
+  <div id="fe-images" style="background:#FFFFFF;border:1px solid #DADCE6;border-radius:14px;padding:32px;margin:0 0 20px;">
+    <h2 style="font-family:Georgia,serif;font-size:22px;color:#13234B;font-weight:700;margin:0 0 6px;">High-resolution images</h2>
+    <p style="font-size:14px;color:#808080;margin:0 0 24px;">Approved photography and graphics for editorial use.</p>
+
+    <div style="display:flex;flex-wrap:wrap;gap:16px;">
+
+      <div style="flex:1 1 200px;border:1px solid #DADCE6;border-radius:12px;padding:16px;box-sizing:border-box;">
+        <img src="[REPLACE headquarters photo URL]" alt="Company headquarters" style="width:100%;height:120px;object-fit:cover;border-radius:8px;background:#F8FCFD;display:block;margin:0 0 10px;" />
+        <div style="font-size:13px;color:#13234B;font-weight:700;margin:0 0 2px;">Company Headquarters</div>
+        <div style="font-size:11px;color:#808080;margin:0 0 10px;">[REPLACE XXXX × XXXX px]</div>
+        <a href="[REPLACE image URL]" style="font-size:13px;color:#13234B;font-weight:600;text-decoration:none;">Download &rarr;</a>
+      </div>
+
+      <div style="flex:1 1 200px;border:1px solid #DADCE6;border-radius:12px;padding:16px;box-sizing:border-box;">
+        <img src="[REPLACE team photo URL]" alt="Leadership team" style="width:100%;height:120px;object-fit:cover;border-radius:8px;background:#F8FCFD;display:block;margin:0 0 10px;" />
+        <div style="font-size:13px;color:#13234B;font-weight:700;margin:0 0 2px;">Leadership Team</div>
+        <div style="font-size:11px;color:#808080;margin:0 0 10px;">[REPLACE XXXX × XXXX px]</div>
+        <a href="[REPLACE image URL]" style="font-size:13px;color:#13234B;font-weight:600;text-decoration:none;">Download &rarr;</a>
+      </div>
+
+      <div style="flex:1 1 200px;border:1px solid #DADCE6;border-radius:12px;padding:16px;box-sizing:border-box;">
+        <img src="[REPLACE product/dashboard screenshot URL]" alt="Data platform screenshot" style="width:100%;height:120px;object-fit:cover;border-radius:8px;background:#F8FCFD;display:block;margin:0 0 10px;" />
+        <div style="font-size:13px;color:#13234B;font-weight:700;margin:0 0 2px;">Data Platform Screenshot</div>
+        <div style="font-size:11px;color:#808080;margin:0 0 10px;">[REPLACE XXXX × XXXX px]</div>
+        <a href="[REPLACE image URL]" style="font-size:13px;color:#13234B;font-weight:600;text-decoration:none;">Download &rarr;</a>
+      </div>
+
+      <div style="flex:1 1 200px;border:1px solid #DADCE6;border-radius:12px;padding:16px;box-sizing:border-box;">
+        <img src="[REPLACE event photo URL]" alt="Conference or event" style="width:100%;height:120px;object-fit:cover;border-radius:8px;background:#F8FCFD;display:block;margin:0 0 10px;" />
+        <div style="font-size:13px;color:#13234B;font-weight:700;margin:0 0 2px;">Conference / Event</div>
+        <div style="font-size:11px;color:#808080;margin:0 0 10px;">[REPLACE XXXX × XXXX px]</div>
+        <a href="[REPLACE image URL]" style="font-size:13px;color:#13234B;font-weight:600;text-decoration:none;">Download &rarr;</a>
+      </div>
+
+    </div>
+    <div style="margin:20px 0 0;">
+      <a href="[REPLACE image library URL]" style="display:inline-block;background:#13234B;color:#FFFFFF;text-decoration:none;padding:11px 20px;border-radius:8px;font-size:14px;font-weight:600;">Download full image library (.zip)</a>
+    </div>
+  </div>
+
+  <!-- ===== PRESS RELEASES ===== -->
+  <div id="fe-press" style="background:#FFFFFF;border:1px solid #DADCE6;border-radius:14px;padding:32px;margin:0 0 20px;">
+    <h2 style="font-family:Georgia,serif;font-size:22px;color:#13234B;font-weight:700;margin:0 0 20px;">Press releases</h2>
+
+    <!-- Release row (duplicate for each) -->
+    <div style="border-bottom:1px solid #DADCE6;padding:0 0 16px;margin:0 0 16px;">
+      <div style="font-size:12px;color:#808080;letter-spacing:0.5px;margin:0 0 4px;">[REPLACE Month DD, YYYY]</div>
+      <a href="[REPLACE release URL]" style="font-family:Georgia,serif;font-size:17px;color:#13234B;text-decoration:none;font-weight:700;">[REPLACE Release headline]</a>
+      <p style="font-size:14px;color:#808080;margin:6px 0 0;">[REPLACE one-line summary of the announcement.]</p>
+      <div style="margin:8px 0 0;"><a href="[REPLACE PDF URL]" style="font-size:13px;color:#EC9446;font-weight:700;text-decoration:none;">Download PDF</a></div>
+    </div>
+
+    <div style="border-bottom:1px solid #DADCE6;padding:0 0 16px;margin:0 0 16px;">
+      <div style="font-size:12px;color:#808080;letter-spacing:0.5px;margin:0 0 4px;">[REPLACE Month DD, YYYY]</div>
+      <a href="[REPLACE release URL]" style="font-family:Georgia,serif;font-size:17px;color:#13234B;text-decoration:none;font-weight:700;">[REPLACE Release headline]</a>
+      <p style="font-size:14px;color:#808080;margin:6px 0 0;">[REPLACE one-line summary of the announcement.]</p>
+      <div style="margin:8px 0 0;"><a href="[REPLACE PDF URL]" style="font-size:13px;color:#EC9446;font-weight:700;text-decoration:none;">Download PDF</a></div>
+    </div>
+
+    <div style="padding:0;margin:0 0 0;">
+      <div style="font-size:12px;color:#808080;letter-spacing:0.5px;margin:0 0 4px;">[REPLACE Month DD, YYYY]</div>
+      <a href="[REPLACE release URL]" style="font-family:Georgia,serif;font-size:17px;color:#13234B;text-decoration:none;font-weight:700;">[REPLACE Release headline]</a>
+      <p style="font-size:14px;color:#808080;margin:6px 0 0;">[REPLACE one-line summary of the announcement.]</p>
+      <div style="margin:8px 0 0;"><a href="[REPLACE PDF URL]" style="font-size:13px;color:#EC9446;font-weight:700;text-decoration:none;">Download PDF</a></div>
+    </div>
+
+    <div style="margin:22px 0 0;">
+      <a href="[REPLACE link to press release archive]" style="color:#13234B;text-decoration:none;font-size:14px;font-weight:600;">View press release archive &rarr;</a>
+    </div>
+  </div>
+
+  <!-- ===== ECONOMICS BLOG ===== -->
+  <div id="fe-blog" style="background:#13234B;border-radius:14px;padding:32px;margin:0 0 20px;">
+    <div style="color:#6CC3E5;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin:0 0 14px;">Economics Blog</div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:16px;margin:0 0 22px;">
+
+      <div style="flex:1 1 220px;background:#1E3760;border-radius:10px;padding:18px;box-sizing:border-box;">
+        <span style="display:inline-block;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:#6CC3E5;background:rgba(108,195,229,0.15);padding:4px 10px;border-radius:20px;margin:0 0 10px;">Macroeconomics</span>
+        <div style="font-family:Georgia,serif;font-size:16px;color:#FFFFFF;font-weight:700;margin:0 0 8px;">[REPLACE blog post title]</div>
+        <p style="font-size:13px;color:#B5B7C1;margin:0 0 10px;">[REPLACE one to two sentence excerpt.]</p>
+        <div style="font-size:11px;color:#808080;">[REPLACE Month DD, YYYY]</div>
+      </div>
+
+      <div style="flex:1 1 220px;background:#1E3760;border-radius:10px;padding:18px;box-sizing:border-box;">
+        <span style="display:inline-block;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:#79AD95;background:rgba(121,173,149,0.15);padding:4px 10px;border-radius:20px;margin:0 0 10px;">Trade &amp; Markets</span>
+        <div style="font-family:Georgia,serif;font-size:16px;color:#FFFFFF;font-weight:700;margin:0 0 8px;">[REPLACE blog post title]</div>
+        <p style="font-size:13px;color:#B5B7C1;margin:0 0 10px;">[REPLACE one to two sentence excerpt.]</p>
+        <div style="font-size:11px;color:#808080;">[REPLACE Month DD, YYYY]</div>
+      </div>
+
+      <div style="flex:1 1 220px;background:#1E3760;border-radius:10px;padding:18px;box-sizing:border-box;">
+        <span style="display:inline-block;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:#DC7572;background:rgba(220,117,114,0.15);padding:4px 10px;border-radius:20px;margin:0 0 10px;">Forecasts</span>
+        <div style="font-family:Georgia,serif;font-size:16px;color:#FFFFFF;font-weight:700;margin:0 0 8px;">[REPLACE blog post title]</div>
+        <p style="font-size:13px;color:#B5B7C1;margin:0 0 10px;">[REPLACE one to two sentence excerpt.]</p>
+        <div style="font-size:11px;color:#808080;">[REPLACE Month DD, YYYY]</div>
+      </div>
+
+    </div>
+
+    <a href="[REPLACE blog URL]" style="display:inline-block;background:#EC9446;color:#13234B;text-decoration:none;padding:12px 22px;border-radius:8px;font-size:14px;font-weight:700;">Visit the full blog &rarr;</a>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <div style="text-align:center;padding:28px 20px 8px;">
+    <p style="font-size:14px;color:#808080;margin:0 0 6px;">Media enquiries: <a href="mailto:[REPLACE press@focuseconomics.com]" style="color:#13234B;text-decoration:none;font-weight:600;">[REPLACE press@focuseconomics.com]</a></p>
+    <p style="font-size:12px;color:#B5B7C1;margin:0;">&copy; [REPLACE YYYY] FocusEconomics. All rights reserved.</p>
+  </div>
 
 </div>
+<!-- ============ end FocusEconomics Media Kit page ============ -->
