@@ -1,18 +1,13 @@
 <!-- wp:html -->
 <!--
-  Demo videos landing page.
-  To publish a video, find its slot below and replace the placeholder <div class="fe-video-ph">…</div>
-  with the embed snippet commented out just above it, swapping in the real video ID:
-    YouTube: https://www.youtube-nocookie.com/embed/VIDEO_ID
-    Vimeo:   https://player.vimeo.com/video/VIDEO_ID
-    Self-hosted MP4: use the <video> snippet on the featured slot instead of an <iframe>.
+  Demo videos landing page. Videos are MP4s in the WordPress Media Library.
+  To add a video, copy a card in the demo library and change the <video> src, the tag line, title and description.
+  The "#t=0.1" on each src makes browsers (including iOS Safari) show the title card as the thumbnail.
 -->
 <style>
 img{max-width:100%;height:auto;}
 .fe-video{position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;background:#13234B;}
-.fe-video iframe,.fe-video video,.fe-video .fe-video-ph{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
-.fe-video-ph{display:flex;align-items:center;justify-content:center;flex-direction:column;border:2px dashed #3E6389!important;border-radius:10px;box-sizing:border-box;color:#b5b7c1;font-size:14px;text-align:center;}
-.fe-video-ph span{display:block;width:56px;height:56px;line-height:56px;border-radius:50%;background:#1E3760;color:#6cc3e5;font-size:22px;margin:0 0 10px;}
+.fe-video iframe,.fe-video video{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
 @media (max-width:700px){
 .fe-col{float:none!important;width:100%!important;margin-left:0!important;margin-right:0!important;}
 .fe-hero{padding:28px 22px!important;}
@@ -22,38 +17,34 @@ img{max-width:100%;height:auto;}
 <div style="width: 100%; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color: #001d27; line-height: 1.65;">
 <div class="fe-hero" style="background: #13234B; border-radius: 16px; padding: 44px 40px; margin: 0 0 20px;">
 <div style="color: #6cc3e5; font-size: 13px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 14px;">Demo videos</div>
-<h1 style="font-family: Georgia,'Times New Roman',serif; font-size: 38px; line-height: 1.15; color: #ffffff; font-weight: bold; margin: 0 0 14px;">See FocusEconomics in action</h1>
-<p style="font-size: 18px; color: #dadce6; max-width: 640px; margin: 0 0 28px;">Short walkthroughs of FocusAnalytics and our Consensus Forecasts, from a first look at the platform to exporting data for your own reports.</p>
-<div><a style="font-size: 13px; font-weight: 600; color: #ffffff; background: #1E3760; padding: 7px 14px; border-radius: 20px; text-decoration: none; margin: 0 8px 8px 0;" href="#fe-featured">Platform overview</a> <a style="font-size: 13px; font-weight: 600; color: #ffffff; background: #1E3760; padding: 7px 14px; border-radius: 20px; text-decoration: none; margin: 0 8px 8px 0;" href="#fe-library">All demos</a> <a style="font-size: 13px; font-weight: 600; color: #ffffff; background: #1E3760; padding: 7px 14px; border-radius: 20px; text-decoration: none; margin: 0 8px 8px 0;" href="#fe-live-demo">Book a live demo</a></div>
+<h1 style="font-family: Georgia,'Times New Roman',serif; font-size: 38px; line-height: 1.15; color: #ffffff; font-weight: bold; margin: 0 0 14px;">See FocusAnalytics in action</h1>
+<p style="font-size: 18px; color: #dadce6; max-width: 640px; margin: 0 0 28px;">Eleven short walkthroughs, each under two minutes, from finding your first report to building scenarios and exporting your own datasets.</p>
+<div><a style="font-size: 13px; font-weight: 600; color: #ffffff; background: #1E3760; padding: 7px 14px; border-radius: 20px; text-decoration: none; margin: 0 8px 8px 0;" href="#fe-featured">Start here</a> <a style="font-size: 13px; font-weight: 600; color: #ffffff; background: #1E3760; padding: 7px 14px; border-radius: 20px; text-decoration: none; margin: 0 8px 8px 0;" href="#fe-library">All demos</a> <a style="font-size: 13px; font-weight: 600; color: #ffffff; background: #1E3760; padding: 7px 14px; border-radius: 20px; text-decoration: none; margin: 0 8px 8px 0;" href="#fe-live-demo">Book a live demo</a></div>
 </div>
 <div id="fe-featured" style="background: #FFFFFF; border: 1px solid #DADCE6; border-radius: 14px; padding: 32px; margin: 0 0 20px;">
-<div style="color: #3e6389; font-size: 13px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 10px;">Start here</div>
-<h2 style="font-family: Georgia,serif; font-size: 24px; color: #13234b; font-weight: bold; margin: 0 0 6px;">FocusAnalytics platform overview</h2>
-<p style="font-size: 16px; color: #808080; margin: 0 0 24px;">A guided tour of the platform: navigating countries and commodities, reading the Consensus, and finding the data you need fast.</p>
-<!-- <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="FocusAnalytics platform overview" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe> -->
-<!-- <video controls preload="metadata" poster="POSTER_URL.jpg"><source src="VIDEO_URL.mp4" type="video/mp4"></video> -->
-<div class="fe-video"><div class="fe-video-ph"><span>&#9654;</span>Video coming soon</div></div>
+<div style="color: #3e6389; font-size: 13px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 10px;">Start here · 1:18</div>
+<h2 style="font-family: Georgia,serif; font-size: 24px; color: #13234b; font-weight: bold; margin: 0 0 6px;">Accessing and downloading reports</h2>
+<p style="font-size: 16px; color: #808080; margin: 0 0 24px;">Log in to FocusAnalytics, open the Reports archive, filter by region and download any report.</p>
+<div class="fe-video"><video controls preload="metadata" playsinline src="https://focus-d7op8.kinsta.storage/production/uploads/2026/10/EMAIL-1Access-and-Download-Reports-in-FocusAnalytics-Platform-.mp4#t=0.1" title="Accessing and downloading reports"></video></div>
 </div>
 <div id="fe-library" style="background: #FFFFFF; border: 1px solid #DADCE6; border-radius: 14px; padding: 32px; margin: 0 0 20px;">
 <h2 style="font-family: Georgia,serif; font-size: 24px; color: #13234b; font-weight: bold; margin: 0 0 6px;">Demo library</h2>
-<p style="font-size: 16px; color: #808080; margin: 0 0 24px;">Each video runs a few minutes and covers one task end to end.</p>
+<p style="font-size: 16px; color: #808080; margin: 0 0 24px;">Each video covers one task end to end.</p>
 <div>
 <div class="fe-col" style="float: left; width: 49%; margin: 0 2% 24px 0;">
 <div style="background: #F8FCFD; border-radius: 12px; padding: 20px;">
-<!-- <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Reading Consensus Forecasts" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe> -->
-<div class="fe-video" style="margin: 0 0 16px;"><div class="fe-video-ph"><span>&#9654;</span>Video coming soon</div></div>
-<div style="font-size: 12px; color: #669ebf; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 4px;">Forecasts</div>
-<div style="font-family: Georgia, serif; font-size: 18px; color: #13234b; font-weight: bold; margin: 0 0 6px;">Reading Consensus Forecasts</div>
-<div style="font-size: 15px; color: #808080;">How the Consensus is built, what the high, low and median tell you, and how forecasts evolve month to month.</div>
+<div class="fe-video" style="margin: 0 0 16px;"><video controls preload="metadata" playsinline src="https://focus-d7op8.kinsta.storage/production/uploads/2026/10/Email-2-1-1.mp4#t=0.1" title="Quickly find the report you need"></video></div>
+<div style="font-size: 12px; color: #669ebf; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 4px;">Reports · 0:50</div>
+<div style="font-family: Georgia, serif; font-size: 18px; color: #13234b; font-weight: bold; margin: 0 0 6px;">Quickly find the report you need</div>
+<div style="font-size: 15px; color: #808080;">Search the report archive and filter by region, commodity and edition date to get straight to the report you want.</div>
 </div>
 </div>
 <div class="fe-col" style="float: left; width: 49%; margin: 0 0 24px 0;">
 <div style="background: #F8FCFD; border-radius: 12px; padding: 20px;">
-<!-- <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Individual panelist breakdowns" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe> -->
-<div class="fe-video" style="margin: 0 0 16px;"><div class="fe-video-ph"><span>&#9654;</span>Video coming soon</div></div>
-<div style="font-size: 12px; color: #669ebf; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 4px;">Forecasts</div>
-<div style="font-family: Georgia, serif; font-size: 18px; color: #13234b; font-weight: bold; margin: 0 0 6px;">Individual panelist breakdowns</div>
-<div style="font-size: 15px; color: #808080;">Drill into the forecasts behind the Consensus and compare individual panelists side by side.</div>
+<div class="fe-video" style="margin: 0 0 16px;"><video controls preload="metadata" playsinline src="https://focus-d7op8.kinsta.storage/production/uploads/2026/10/Email-3-1.mp4#t=0.1" title="How to get a reliable read on any economy"></video></div>
+<div style="font-size: 12px; color: #669ebf; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 4px;">Countries · 0:47</div>
+<div style="font-family: Georgia, serif; font-size: 18px; color: #13234b; font-weight: bold; margin: 0 0 6px;">How to get a reliable read on any economy</div>
+<div style="font-size: 15px; color: #808080;">Open any country page for key forecasts, credit ratings and the outlook, then download the data behind each indicator.</div>
 </div>
 </div>
 <div style="clear: both;"> </div>
@@ -61,24 +52,78 @@ img{max-width:100%;height:auto;}
 <div>
 <div class="fe-col" style="float: left; width: 49%; margin: 0 2% 24px 0;">
 <div style="background: #F8FCFD; border-radius: 12px; padding: 20px;">
-<!-- <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Commodities coverage" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe> -->
-<div class="fe-video" style="margin: 0 0 16px;"><div class="fe-video-ph"><span>&#9654;</span>Video coming soon</div></div>
-<div style="font-size: 12px; color: #669ebf; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 4px;">Commodities</div>
-<div style="font-family: Georgia, serif; font-size: 18px; color: #13234b; font-weight: bold; margin: 0 0 6px;">Commodities coverage</div>
-<div style="font-size: 15px; color: #808080;">Price forecasts for 30+ commodities, from energy and metals to agricultural goods.</div>
+<div class="fe-video" style="margin: 0 0 16px;"><video controls preload="metadata" playsinline src="https://focus-d7op8.kinsta.storage/production/uploads/2026/10/Email-4A-1.mp4#t=0.1" title="Tracking a commodity market"></video></div>
+<div style="font-size: 12px; color: #669ebf; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 4px;">Commodities · 0:42</div>
+<div style="font-family: Georgia, serif; font-size: 18px; color: #13234b; font-weight: bold; margin: 0 0 6px;">Tracking a commodity market</div>
+<div style="font-size: 15px; color: #808080;">Follow a commodity's price evolution and Consensus outlook, and export the chart or data in a click.</div>
 </div>
 </div>
 <div class="fe-col" style="float: left; width: 49%; margin: 0 0 24px 0;">
 <div style="background: #F8FCFD; border-radius: 12px; padding: 20px;">
-<!-- <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Historical data and exports" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe> -->
-<div class="fe-video" style="margin: 0 0 16px;"><div class="fe-video-ph"><span>&#9654;</span>Video coming soon</div></div>
-<div style="font-size: 12px; color: #669ebf; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 4px;">Data</div>
-<div style="font-family: Georgia, serif; font-size: 18px; color: #13234b; font-weight: bold; margin: 0 0 6px;">Historical data and exports</div>
-<div style="font-size: 15px; color: #808080;">Pull historical series, build charts and export to Excel for your own models and reports.</div>
+<div class="fe-video" style="margin: 0 0 16px;"><video controls preload="metadata" playsinline src="https://focus-d7op8.kinsta.storage/production/uploads/2026/10/Email-4B-1.mp4#t=0.1" title="Getting up to speed with any country"></video></div>
+<div style="font-size: 12px; color: #669ebf; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 4px;">Countries · 1:38</div>
+<div style="font-family: Georgia, serif; font-size: 18px; color: #13234b; font-weight: bold; margin: 0 0 6px;">Getting up to speed with any country</div>
+<div style="font-size: 15px; color: #808080;">Go from the country overview to the panelist breakdown and see how forecasts are distributed across the panel.</div>
 </div>
 </div>
 <div style="clear: both;"> </div>
 </div>
+<div>
+<div class="fe-col" style="float: left; width: 49%; margin: 0 2% 24px 0;">
+<div style="background: #F8FCFD; border-radius: 12px; padding: 20px;">
+<div class="fe-video" style="margin: 0 0 16px;"><video controls preload="metadata" playsinline src="https://focus-d7op8.kinsta.storage/production/uploads/2026/10/Email-5-1.mp4#t=0.1" title="Consensus building dashboards"></video></div>
+<div style="font-size: 12px; color: #669ebf; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 4px;">Dashboards · 1:26</div>
+<div style="font-family: Georgia, serif; font-size: 18px; color: #13234b; font-weight: bold; margin: 0 0 6px;">Consensus building dashboards</div>
+<div style="font-size: 15px; color: #808080;">See every panelist's forecast for an indicator side by side, and where the Consensus sits among them.</div>
+</div>
+</div>
+<div class="fe-col" style="float: left; width: 49%; margin: 0 0 24px 0;">
+<div style="background: #F8FCFD; border-radius: 12px; padding: 20px;">
+<div class="fe-video" style="margin: 0 0 16px;"><video controls preload="metadata" playsinline src="https://focus-d7op8.kinsta.storage/production/uploads/2026/10/Email-5B-1.mp4#t=0.1" title="Track forecast evolution"></video></div>
+<div style="font-size: 12px; color: #669ebf; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 4px;">Dashboards · 1:14</div>
+<div style="font-family: Georgia, serif; font-size: 18px; color: #13234b; font-weight: bold; margin: 0 0 6px;">Track forecast evolution</div>
+<div style="font-size: 15px; color: #808080;">Watch how the Consensus and individual panelists have revised their forecasts over time.</div>
+</div>
+</div>
+<div style="clear: both;"> </div>
+</div>
+<div>
+<div class="fe-col" style="float: left; width: 49%; margin: 0 2% 24px 0;">
+<div style="background: #F8FCFD; border-radius: 12px; padding: 20px;">
+<div class="fe-video" style="margin: 0 0 16px;"><video controls preload="metadata" playsinline src="https://focus-d7op8.kinsta.storage/production/uploads/2026/10/Email-6-1.mp4#t=0.1" title="How to benchmark any country with its peers"></video></div>
+<div style="font-size: 12px; color: #669ebf; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 4px;">Dashboards · 0:42</div>
+<div style="font-family: Georgia, serif; font-size: 18px; color: #13234b; font-weight: bold; margin: 0 0 6px;">How to benchmark any country with its peers</div>
+<div style="font-size: 15px; color: #808080;">Compare a country's growth, inflation and other forecasts against its peers on a single dashboard.</div>
+</div>
+</div>
+<div class="fe-col" style="float: left; width: 49%; margin: 0 0 24px 0;">
+<div style="background: #F8FCFD; border-radius: 12px; padding: 20px;">
+<div class="fe-video" style="margin: 0 0 16px;"><video controls preload="metadata" playsinline src="https://focus-d7op8.kinsta.storage/production/uploads/2026/10/Email-7-1.mp4#t=0.1" title="Building credible best and worst cases"></video></div>
+<div style="font-size: 12px; color: #669ebf; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 4px;">Dashboards · 1:18</div>
+<div style="font-family: Georgia, serif; font-size: 18px; color: #13234b; font-weight: bold; margin: 0 0 6px;">Building credible best and worst cases</div>
+<div style="font-size: 15px; color: #808080;">Use the scenario dashboards to frame upside and downside cases from the full range of panelist forecasts.</div>
+</div>
+</div>
+<div style="clear: both;"> </div>
+</div>
+<div>
+<div class="fe-col" style="float: left; width: 49%; margin: 0 2% 24px 0;">
+<div style="background: #F8FCFD; border-radius: 12px; padding: 20px;">
+<div class="fe-video" style="margin: 0 0 16px;"><video controls preload="metadata" playsinline src="https://focus-d7op8.kinsta.storage/production/uploads/2026/10/Email-8-1.mp4#t=0.1" title="Preparing presentation material in 2 minutes"></video></div>
+<div style="font-size: 12px; color: #669ebf; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 4px;">Presentations · 1:04</div>
+<div style="font-family: Georgia, serif; font-size: 18px; color: #13234b; font-weight: bold; margin: 0 0 6px;">Preparing presentation material in 2 minutes</div>
+<div style="font-size: 15px; color: #808080;">Switch to presenter view for ready-made charts and commentary on any country or commodity.</div>
+</div>
+</div>
+<div class="fe-col" style="float: left; width: 49%; margin: 0 0 24px 0;">
+<div style="background: #F8FCFD; border-radius: 12px; padding: 20px;">
+<div class="fe-video" style="margin: 0 0 16px;"><video controls preload="metadata" playsinline src="https://focus-d7op8.kinsta.storage/production/uploads/2026/10/Email-9-1.mp4#t=0.1" title="Building and exporting a custom dataset"></video></div>
+<div style="font-size: 12px; color: #669ebf; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 4px;">Data · 1:27</div>
+<div style="font-family: Georgia, serif; font-size: 18px; color: #13234b; font-weight: bold; margin: 0 0 6px;">Building and exporting a custom dataset</div>
+<div style="font-size: 15px; color: #808080;">Pick countries, indicators, frequency and period in the Databank, then save and export your own dataset.</div>
+</div>
+</div>
+<div style="clear: both;"> </div>
 </div>
 <div id="fe-live-demo" style="background: #13234B; border-radius: 14px; padding: 32px; margin: 0 0 20px;">
 <div style="color: #6cc3e5; font-size: 13px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 14px;">Live demo</div>
