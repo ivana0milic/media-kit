@@ -1,0 +1,92 @@
+<!-- wp:html -->
+<!--
+  Demo videos landing page.
+  To publish a video, find its slot below and replace the placeholder <div class="fe-video-ph">…</div>
+  with the embed snippet commented out just above it, swapping in the real video ID:
+    YouTube: https://www.youtube-nocookie.com/embed/VIDEO_ID
+    Vimeo:   https://player.vimeo.com/video/VIDEO_ID
+    Self-hosted MP4: use the <video> snippet on the featured slot instead of an <iframe>.
+-->
+<style>
+img{max-width:100%;height:auto;}
+.fe-video{position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;background:#13234B;}
+.fe-video iframe,.fe-video video,.fe-video .fe-video-ph{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.fe-video-ph{display:flex;align-items:center;justify-content:center;flex-direction:column;border:2px dashed #3E6389!important;border-radius:10px;box-sizing:border-box;color:#b5b7c1;font-size:14px;text-align:center;}
+.fe-video-ph span{display:block;width:56px;height:56px;line-height:56px;border-radius:50%;background:#1E3760;color:#6cc3e5;font-size:22px;margin:0 0 10px;}
+@media (max-width:700px){
+.fe-col{float:none!important;width:100%!important;margin-left:0!important;margin-right:0!important;}
+.fe-hero{padding:28px 22px!important;}
+.fe-hero h1{font-size:26px!important;}
+}
+</style>
+<div style="width: 100%; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color: #001d27; line-height: 1.65;">
+<div class="fe-hero" style="background: #13234B; border-radius: 16px; padding: 44px 40px; margin: 0 0 20px;">
+<div style="color: #6cc3e5; font-size: 13px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 14px;">Demo videos</div>
+<h1 style="font-family: Georgia,'Times New Roman',serif; font-size: 38px; line-height: 1.15; color: #ffffff; font-weight: bold; margin: 0 0 14px;">See FocusEconomics in action</h1>
+<p style="font-size: 18px; color: #dadce6; max-width: 640px; margin: 0 0 28px;">Short walkthroughs of FocusAnalytics and our Consensus Forecasts, from a first look at the platform to exporting data for your own reports.</p>
+<div><a style="font-size: 13px; font-weight: 600; color: #ffffff; background: #1E3760; padding: 7px 14px; border-radius: 20px; text-decoration: none; margin: 0 8px 8px 0;" href="#fe-featured">Platform overview</a> <a style="font-size: 13px; font-weight: 600; color: #ffffff; background: #1E3760; padding: 7px 14px; border-radius: 20px; text-decoration: none; margin: 0 8px 8px 0;" href="#fe-library">All demos</a> <a style="font-size: 13px; font-weight: 600; color: #ffffff; background: #1E3760; padding: 7px 14px; border-radius: 20px; text-decoration: none; margin: 0 8px 8px 0;" href="#fe-live-demo">Book a live demo</a></div>
+</div>
+<div id="fe-featured" style="background: #FFFFFF; border: 1px solid #DADCE6; border-radius: 14px; padding: 32px; margin: 0 0 20px;">
+<div style="color: #3e6389; font-size: 13px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 10px;">Start here</div>
+<h2 style="font-family: Georgia,serif; font-size: 24px; color: #13234b; font-weight: bold; margin: 0 0 6px;">FocusAnalytics platform overview</h2>
+<p style="font-size: 16px; color: #808080; margin: 0 0 24px;">A guided tour of the platform: navigating countries and commodities, reading the Consensus, and finding the data you need fast.</p>
+<!-- <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="FocusAnalytics platform overview" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe> -->
+<!-- <video controls preload="metadata" poster="POSTER_URL.jpg"><source src="VIDEO_URL.mp4" type="video/mp4"></video> -->
+<div class="fe-video"><div class="fe-video-ph"><span>&#9654;</span>Video coming soon</div></div>
+</div>
+<div id="fe-library" style="background: #FFFFFF; border: 1px solid #DADCE6; border-radius: 14px; padding: 32px; margin: 0 0 20px;">
+<h2 style="font-family: Georgia,serif; font-size: 24px; color: #13234b; font-weight: bold; margin: 0 0 6px;">Demo library</h2>
+<p style="font-size: 16px; color: #808080; margin: 0 0 24px;">Each video runs a few minutes and covers one task end to end.</p>
+<div>
+<div class="fe-col" style="float: left; width: 49%; margin: 0 2% 24px 0;">
+<div style="background: #F8FCFD; border-radius: 12px; padding: 20px;">
+<!-- <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Reading Consensus Forecasts" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe> -->
+<div class="fe-video" style="margin: 0 0 16px;"><div class="fe-video-ph"><span>&#9654;</span>Video coming soon</div></div>
+<div style="font-size: 12px; color: #669ebf; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 4px;">Forecasts</div>
+<div style="font-family: Georgia, serif; font-size: 18px; color: #13234b; font-weight: bold; margin: 0 0 6px;">Reading Consensus Forecasts</div>
+<div style="font-size: 15px; color: #808080;">How the Consensus is built, what the high, low and median tell you, and how forecasts evolve month to month.</div>
+</div>
+</div>
+<div class="fe-col" style="float: left; width: 49%; margin: 0 0 24px 0;">
+<div style="background: #F8FCFD; border-radius: 12px; padding: 20px;">
+<!-- <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Individual panelist breakdowns" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe> -->
+<div class="fe-video" style="margin: 0 0 16px;"><div class="fe-video-ph"><span>&#9654;</span>Video coming soon</div></div>
+<div style="font-size: 12px; color: #669ebf; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 4px;">Forecasts</div>
+<div style="font-family: Georgia, serif; font-size: 18px; color: #13234b; font-weight: bold; margin: 0 0 6px;">Individual panelist breakdowns</div>
+<div style="font-size: 15px; color: #808080;">Drill into the forecasts behind the Consensus and compare individual panelists side by side.</div>
+</div>
+</div>
+<div style="clear: both;"> </div>
+</div>
+<div>
+<div class="fe-col" style="float: left; width: 49%; margin: 0 2% 24px 0;">
+<div style="background: #F8FCFD; border-radius: 12px; padding: 20px;">
+<!-- <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Commodities coverage" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe> -->
+<div class="fe-video" style="margin: 0 0 16px;"><div class="fe-video-ph"><span>&#9654;</span>Video coming soon</div></div>
+<div style="font-size: 12px; color: #669ebf; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 4px;">Commodities</div>
+<div style="font-family: Georgia, serif; font-size: 18px; color: #13234b; font-weight: bold; margin: 0 0 6px;">Commodities coverage</div>
+<div style="font-size: 15px; color: #808080;">Price forecasts for 30+ commodities, from energy and metals to agricultural goods.</div>
+</div>
+</div>
+<div class="fe-col" style="float: left; width: 49%; margin: 0 0 24px 0;">
+<div style="background: #F8FCFD; border-radius: 12px; padding: 20px;">
+<!-- <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Historical data and exports" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe> -->
+<div class="fe-video" style="margin: 0 0 16px;"><div class="fe-video-ph"><span>&#9654;</span>Video coming soon</div></div>
+<div style="font-size: 12px; color: #669ebf; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 4px;">Data</div>
+<div style="font-family: Georgia, serif; font-size: 18px; color: #13234b; font-weight: bold; margin: 0 0 6px;">Historical data and exports</div>
+<div style="font-size: 15px; color: #808080;">Pull historical series, build charts and export to Excel for your own models and reports.</div>
+</div>
+</div>
+<div style="clear: both;"> </div>
+</div>
+</div>
+<div id="fe-live-demo" style="background: #13234B; border-radius: 14px; padding: 32px; margin: 0 0 20px;">
+<div style="color: #6cc3e5; font-size: 13px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 14px;">Live demo</div>
+<h2 style="font-family: Georgia,serif; font-size: 22px; color: #ffffff; font-weight: bold; margin: 0 0 10px;">Want a walkthrough tailored to your team?</h2>
+<p style="font-size: 16px; color: #b5b7c1; margin: 0 0 22px; max-width: 560px;">Book a live session and we'll show you the countries, commodities and indicators that matter to you.</p>
+<a style="background: #EC9446; color: #13234b; text-decoration: none; padding: 12px 22px; border-radius: 8px; font-size: 16px; font-weight: bold;" href="https://www.focus-economics.com/contact/">Book a live demo →</a></div>
+<div style="text-align: center; padding: 28px 20px 8px;">
+<p style="font-size: 16px; color: #808080; margin: 0;">Questions about our demos: <a style="color: #13234b; text-decoration: none; font-weight: 600;" href="mailto:media@focus-economics.com">media@focus-economics.com</a></p>
+</div>
+</div>
+<!-- /wp:html -->
