@@ -191,7 +191,7 @@
   .award p { margin: 0; color: #D6DEEA; font-size: 15px; }
 
   /* Steps */
-  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; counter-reset: s; }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; counter-reset: s; }
   .step { position: relative; padding-top: 56px; }
   .step::before {
     counter-increment: s; content: counter(s);
@@ -287,15 +287,15 @@
         <svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="#6CC3E5"/></svg>
         FocusAnalytics free trial
       </span>
-      <h1>Consensus forecasts for 198+ economies. <em>Free for <span class="ph">14 days</span>.</em></h1>
-      <p class="lede">See where the world's leading economists expect GDP, inflation, rates and commodities to go, and plan around the consensus instead of a single opinion.</p>
+      <h1>Consensus forecasts for 198+ economies. <em>Try them free, set up around you.</em></h1>
+      <p class="lede">See where the world's leading economists expect GDP, inflation, rates and commodities to go. Our team builds your trial around the countries and indicators you actually need.</p>
       <ul class="checks">
         <li><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#EC9446"/><path d="M6 10.4l2.6 2.6L14.2 7.4" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span><b>Full platform access</b>: every country, commodity and panelist forecast</span></li>
+          <span><b>Tailored coverage</b>: the countries, commodities, indicators and add-ons that matter to you</span></li>
         <li><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#EC9446"/><path d="M6 10.4l2.6 2.6L14.2 7.4" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span><b>No credit card</b> and no obligation to buy</span></li>
+          <span><b>A guided demo</b> with our team, so you're productive from day one</span></li>
         <li><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#EC9446"/><path d="M6 10.4l2.6 2.6L14.2 7.4" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span><b>Login details in your inbox</b> <span class="ph">within one business day</span></span></li>
+          <span><b>Typically 1–2 weeks</b>, longer for public sector organizations</span></li>
       </ul>
       <div class="stats">
         <div class="stat"><b>25+</b><span>years of forecasting</span></div>
@@ -306,8 +306,8 @@
 
     <div class="form-card" id="trial">
       <form id="trialForm" novalidate>
-        <h2>Start your free trial</h2>
-        <p class="sub">Takes under a minute. <span class="ph">No sales call required.</span></p>
+        <h2>Request your free trial</h2>
+        <p class="sub">Takes under a minute. We'll be in touch to book your demo.</p>
 
         <div class="row">
           <div class="field"><label for="fn">First name</label><input id="fn" name="fn" autocomplete="given-name" required></div>
@@ -324,6 +324,19 @@
         <div class="row">
           <div class="field"><label for="co">Company</label><input id="co" name="co" autocomplete="organization" required></div>
           <div class="field"><label for="jt">Job title <span class="opt">(optional)</span></label><input id="jt" name="jt" autocomplete="organization-title"></div>
+        </div>
+        <div class="field">
+          <label for="uc">What do you need forecasts for? <span class="opt">(optional)</span></label>
+          <select id="uc" name="uc">
+            <option value="">Choose one</option>
+            <option>Budgeting and financial planning</option>
+            <option>Market entry or country risk</option>
+            <option>Investment or portfolio decisions</option>
+            <option>Commodity and pricing strategy</option>
+            <option>Public policy or research</option>
+            <option>Something else</option>
+          </select>
+          <div class="hint">Helps us set up your trial before the demo.</div>
         </div>
         <div class="field">
           <label for="ph">Phone <span class="opt">(optional)</span></label>
@@ -344,20 +357,19 @@
         <label class="consent"><input type="checkbox" id="consent" required>
           <span>I agree to the <a href="#">Privacy Policy</a>. We'll only use your details to set up and support your trial.</span></label>
 
-        <button class="btn block" type="submit">Start my free trial
+        <button class="btn block" type="submit">Request my free trial
           <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h11M10 4.5L14.5 9 10 13.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div class="reassure">
           <span><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="2" y="5" width="8" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M4 5V3.6a2 2 0 014 0V5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>Your data stays private</span>
-          <span>No credit card</span>
-          <span>Cancel anytime</span>
+          <span class="ph">No obligation to buy</span>
         </div>
       </form>
 
       <div class="success" id="success" role="status" aria-live="polite">
         <svg width="56" height="56" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="28" fill="#79AD95" opacity=".18"/><circle cx="28" cy="28" r="18" fill="#79AD95"/><path d="M20 28.5l5.5 5.5L36.5 23" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <h2>You're in, <span id="successName">there</span>.</h2>
-        <p>We've sent your login details to <b id="successEmail"></b>.</p>
+        <h2>Thanks, <span id="successName">there</span>.</h2>
+        <p>We'll email <b id="successEmail"></b> <span class="ph">within one business day</span> to book your demo.</p>
         <p>While you wait, browse the <a href="#">latest Consensus Forecast highlights</a>.</p>
       </div>
     </div>
@@ -380,7 +392,7 @@
   <div class="wrap">
     <div class="section-head">
       <div class="kicker">Inside FocusAnalytics</div>
-      <h2>Everything you'll unlock on day one</h2>
+      <h2>What you'll explore in your trial</h2>
       <p>Compare countries, track how the consensus moves, and drill into what each individual panelist expects.</p>
     </div>
 
@@ -397,7 +409,7 @@
           <text x="26" y="132">Consensus history</text>
           <text x="26" y="170">Panelist breakdown</text>
           <text x="26" y="208">Commodities</text>
-          <text x="26" y="246">Data export</text>
+          <text x="26" y="246">Saved views</text>
         </g>
         <!-- filter chips -->
         <g font-family="Montserrat, sans-serif" font-size="12">
@@ -405,8 +417,8 @@
           <text x="232" y="46" fill="#5F6470">Countries:</text><text x="300" y="46" fill="#13234B" font-weight="600">UK, United States</text>
           <rect x="440" y="24" width="270" height="34" rx="8" fill="#fff" stroke="#DADCE6"/>
           <text x="454" y="46" fill="#5F6470">Indicator:</text><text x="520" y="46" fill="#13234B" font-weight="600">Private consumption, y/y %</text>
-          <rect x="866" y="24" width="110" height="34" rx="8" fill="#EC9446"/>
-          <text x="921" y="46" fill="#fff" font-weight="700" text-anchor="middle">Export ↓</text>
+          <rect x="836" y="24" width="140" height="34" rx="8" fill="#fff" stroke="#DADCE6"/>
+          <text x="906" y="46" fill="#13234B" font-weight="600" text-anchor="middle">Chart data ↓</text>
         </g>
         <!-- main chart card -->
         <rect x="218" y="78" width="500" height="420" rx="12" fill="#fff" stroke="#DADCE6"/>
@@ -464,8 +476,8 @@
   <div class="wrap">
     <div class="section-head">
       <div class="kicker">What's in your trial</div>
-      <h2>The full product, not a cut-down demo</h2>
-      <p>Use it on a real planning problem. That's the fastest way to see if it fits.</p>
+      <h2>Set up around your real use case</h2>
+      <p>Tell us what you're working on and we'll open up the coverage you need to test it properly.</p>
     </div>
     <div class="features">
       <div class="feature">
@@ -490,13 +502,13 @@
       </div>
       <div class="feature">
         <div class="icon" style="background:rgba(19,35,75,.08)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#13234B" stroke-width="2" stroke-linecap="round"><path d="M12 4v11M7.5 10.5L12 15l4.5-4.5"/><path d="M4 17v3h16v-3"/></svg></div>
-        <h3>Export to your tools</h3>
-        <p>Download to <span class="ph">Excel or via API</span> and drop the data straight into your models.</p>
+        <h3>Chart data downloads</h3>
+        <p>Download the data behind any chart you build. Bulk export through Databank comes with a subscription.</p>
       </div>
       <div class="feature">
-        <div class="icon" style="background:rgba(220,117,114,.15)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B4433F" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h10M4 18h7"/></svg></div>
-        <h3>Monthly reports</h3>
-        <p>Get the latest Consensus Forecast publications <span class="ph">for the regions you choose</span> during your trial.</p>
+        <div class="icon" style="background:rgba(220,117,114,.15)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B4433F" stroke-width="2" stroke-linecap="round"><path d="M4 5h16v11H9l-5 4z"/></svg></div>
+        <h3>An expert on hand</h3>
+        <p>We check in halfway through your trial to answer questions and adjust your coverage if you need more.</p>
       </div>
     </div>
   </div>
@@ -521,12 +533,13 @@
   <div class="wrap">
     <div class="section-head">
       <div class="kicker">How it works</div>
-      <h2>From sign-up to insight in three steps</h2>
+      <h2>A trial with support at every step</h2>
     </div>
     <div class="steps">
-      <div class="step"><h3>Tell us who you are</h3><p>Fill in the short form with your work email. No payment details needed.</p></div>
-      <div class="step"><h3>Get your login</h3><p>Your access arrives by email <span class="ph">within one business day</span>, with a quick-start guide.</p></div>
-      <div class="step"><h3>Explore for <span class="ph">14 days</span></h3><p>Use the full platform. If you'd like a walkthrough, book one with our team, but it's optional.</p></div>
+      <div class="step"><h3>Request your trial</h3><p>Fill in the short form with your work email. No payment details needed.</p></div>
+      <div class="step"><h3>Take a quick demo</h3><p>A specialist shows you around the platform and learns what you need, so your trial covers the right data.</p></div>
+      <div class="step"><h3>Explore with your own login</h3><p>Usually for 1–2 weeks, with a check-in halfway to answer questions or widen your coverage.</p></div>
+      <div class="step"><h3>Review together</h3><p>At the end, we'll talk through what you found and whether FocusAnalytics fits your team.</p></div>
     </div>
   </div>
 </section>
@@ -536,10 +549,11 @@
   <div class="wrap">
     <div class="section-head"><div class="kicker">FAQ</div><h2>Questions before you start?</h2></div>
     <div class="faq">
-      <details open><summary>What happens when the trial ends?</summary><p><span class="ph">Your access simply expires. Nothing is charged and nothing renews automatically.</span> If you'd like to keep going, our team will help you pick the right subscription.</p></details>
-      <details><summary>Why do you need a company email?</summary><p>Trials are for professional use, and a company email lets us set up access for your organisation. Personal addresses (Gmail, Outlook, etc.) aren't accepted.</p></details>
-      <details><summary>Will someone call me?</summary><p><span class="ph">Only if you ask.</span> Your phone number is optional. Add it if you'd like a guided walkthrough of the platform.</p></details>
-      <details><summary>Can my colleagues try it too?</summary><p><span class="ph">Yes. Mention it in your reply to the welcome email and we can add teammates to the same trial.</span></p></details>
+      <details open><summary>How long does the trial last?</summary><p>We agree the length with you based on what you need to evaluate. Most trials run 1–2 weeks, and public sector organizations can have up to 1–2 months.</p></details>
+      <details><summary>What will I have access to?</summary><p>Whatever your use case needs: countries, commodities, indicators and add-ons. Some features, like Databank for bulk data export, are usually reserved for subscribers. You can still download the data behind any chart.</p></details>
+      <details><summary>Why is there a demo call first?</summary><p>It's the quickest way to learn the platform, and it lets us set your trial up with the right coverage so you're not stuck working out where everything is.</p></details>
+      <details><summary>Why do you need a company email?</summary><p>Trials are for professional use, and a company email lets us set up access for your organization. Personal addresses (Gmail, Outlook, etc.) aren't accepted.</p></details>
+      <details><summary>What happens when the trial ends?</summary><p>We'll meet to review how it went and whether a subscription makes sense. <span class="ph">Your trial access then ends, and nothing is charged.</span></p></details>
       <details><summary>How is my data used?</summary><p>Only to set up and support your trial, in line with our <a href="#">Privacy Policy</a>. We never sell your details.</p></details>
     </div>
   </div>
@@ -549,9 +563,9 @@
 <section class="final">
   <div class="wrap">
     <h2>Plan with the consensus, not a guess.</h2>
-    <p>Full access for <span class="ph">14 days</span>. No credit card.</p>
+    <p>A free trial built around your use case, with our team alongside you.</p>
     <div class="actions">
-      <a class="btn" href="#trial">Start my free trial</a>
+      <a class="btn" href="#trial">Request my free trial</a>
       <a class="btn ghost" href="#">Download a free sample report</a>
     </div>
   </div>
@@ -561,7 +575,7 @@
   <div class="wrap"><span>© FocusEconomics</span><span><a href="#">Privacy Policy</a> · <a href="#">Terms</a> · <a href="#">Contact</a></span></div>
 </footer>
 
-<div class="sticky-cta" id="sticky"><a class="btn block" href="#trial">Start my free trial</a></div>
+<div class="sticky-cta" id="sticky"><a class="btn block" href="#trial">Request my free trial</a></div>
 
 <script>
   // Placeholder highlight toggle
