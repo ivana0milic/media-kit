@@ -1,17 +1,17 @@
 <!-- wp:html -->
 <!-- Same build rules as the free trial page: no style, script or svg tags and no transparent colours; every style is inline and the layout stacks on mobile through flex-wrap. Bands break out of the theme container with negative margins and use side padding to line up with the header. Divs carry max-width: none because the theme caps nested content at ~640px. "fe-reveal" classes only animate once the snippet in free-trial-additional-css.css is added under Appearance > Customize > Additional CSS (the .fe-trial wrapper below is what that snippet targets). -->
-<!-- TO EDIT: replace every [bracketed] placeholder and both https://WEBINAR-LINK-GOES-HERE links. -->
+<!-- TO EDIT: replace every [bracketed] placeholder and every https://WEBINAR-LINK-GOES-HERE link. To play the video on the page instead, swap the play-panel link in the hero card for a YouTube/Vimeo iframe. Duplicate a speaker column for more speakers. -->
 <div class="fe-trial" style="width: 100%; max-width: none; color: #001d27; line-height: 1.6; margin-left: 0; margin-right: 0;">
 
 <!-- HERO -->
-<div style="margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); background: linear-gradient(180deg, #13234B 0%, #1E3760 100%); padding: 56px 20px 40px; padding-left: max(20px, calc(50vw - 480px)); padding-right: max(20px, calc(50vw - 480px)); display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; max-width: none;">
+<div style="margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); background: radial-gradient(ellipse 110% 100% at 90% 0%, #3E6389 0%, #1E3760 50%, #13234B 100%); padding: 56px 20px 40px; padding-left: max(20px, calc(50vw - 480px)); padding-right: max(20px, calc(50vw - 480px)); display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; max-width: none;">
 <div style="flex: 1 1 400px; max-width: none; margin: 0;">
-<div style="display: inline-block; color: #6cc3e5; font-size: 12px; font-weight: bold; letter-spacing: 1.5px; text-transform: uppercase; border: 1px solid #345B7E; border-radius: 20px; padding: 5px 12px; margin: 0 0 18px; max-width: none;">FocusEconomics webinar · On demand</div>
+<div style="display: inline-block; color: #6cc3e5; font-size: 12px; font-weight: bold; letter-spacing: 1.5px; text-transform: uppercase; border: 1px solid #345B7E; border-radius: 20px; padding: 5px 12px; margin: 0 0 18px; max-width: none;">FocusEconomics × Haver Analytics · On demand</div>
 <h1 style="font-size: 40px; line-height: 1.15; color: #ffffff; font-weight: 800; margin: 0 0 18px;">[Webinar title goes here.] <span style="color: #EC9446;">[Watch it any time.]</span></h1>
 <p style="font-size: 17px; color: #dadce6; margin: 0 0 24px;">[One or two sentences on what viewers will learn and why it matters to them.]</p>
 <div style="display: flex; gap: 12px; align-items: flex-start; margin: 0 0 12px; max-width: none;"><span style="flex: 0 0 22px; height: 22px; line-height: 22px; text-align: center; border-radius: 50%; background: #EC9446; color: #ffffff; font-size: 13px; font-weight: bold;">✓</span><span style="font-size: 16px; color: #ffffff;"><strong>[Key takeaway one]</strong>: [short supporting line]</span></div>
 <div style="display: flex; gap: 12px; align-items: flex-start; margin: 0 0 12px; max-width: none;"><span style="flex: 0 0 22px; height: 22px; line-height: 22px; text-align: center; border-radius: 50%; background: #EC9446; color: #ffffff; font-size: 13px; font-weight: bold;">✓</span><span style="font-size: 16px; color: #ffffff;"><strong>[Key takeaway two]</strong>: [short supporting line]</span></div>
-<div style="display: flex; gap: 12px; align-items: flex-start; margin: 0 0 28px; max-width: none;"><span style="flex: 0 0 22px; height: 22px; line-height: 22px; text-align: center; border-radius: 50%; background: #EC9446; color: #ffffff; font-size: 13px; font-weight: bold;">✓</span><span style="font-size: 16px; color: #ffffff;"><strong>Prerecorded</strong>, so you can watch at your own pace</span></div>
+<div style="display: flex; gap: 12px; align-items: flex-start; margin: 0 0 28px; max-width: none;"><span style="flex: 0 0 22px; height: 22px; line-height: 22px; text-align: center; border-radius: 50%; background: #EC9446; color: #ffffff; font-size: 13px; font-weight: bold;">✓</span><span style="font-size: 16px; color: #ffffff;"><strong>Two data teams, one session</strong>: FocusEconomics and Haver Analytics, prerecorded to watch at your own pace</span></div>
 <div style="border-top: 1px solid #34436A; padding-top: 22px; display: flex; flex-wrap: wrap; gap: 28px; max-width: none; margin-left: 0; margin-right: 0;">
 <div style="max-width: none; margin-left: 0; margin-right: 0;"><div style="font-size: 28px; font-weight: 800; color: #ffffff; line-height: 1.2; max-width: none; margin-left: 0; margin-right: 0;">[XX] min</div><div style="font-size: 13px; color: #b5b7c1; max-width: none; margin-left: 0; margin-right: 0;">watch time</div></div>
 <div style="border-left: 1px solid #34436A; padding-left: 28px; max-width: none; margin-left: 0; margin-right: 0;"><div style="font-size: 28px; font-weight: 800; color: #ffffff; line-height: 1.2; max-width: none; margin-left: 0; margin-right: 0;">[Month DD]</div><div style="font-size: 13px; color: #b5b7c1; max-width: none; margin-left: 0; margin-right: 0;">available from</div></div>
@@ -21,9 +21,8 @@
 <div id="wb-watch" style="flex: 1 1 320px; max-width: none; margin: 0; background: #ffffff; border-radius: 14px; padding: 28px 24px;">
 <h2 style="font-size: 22px; color: #13234b; font-weight: 800; margin: 0 0 4px;">Watch the webinar</h2>
 <p style="font-size: 14px; color: #808080; margin: 0 0 18px;">No sign-up needed. Press play and you're in.</p>
-<!-- To play the video on the page instead, replace this <a> with your YouTube/Vimeo iframe. -->
-<a href="https://WEBINAR-LINK-GOES-HERE" style="display: block; text-decoration: none; background: linear-gradient(180deg, #13234B 0%, #1E3760 100%); border-radius: 12px; padding: 54px 20px; text-align: center; margin: 0 0 18px; max-width: none;">
-<span style="display: inline-block; width: 64px; height: 64px; line-height: 64px; border-radius: 50%; background: #EC9446; color: #ffffff; font-size: 26px; font-weight: bold; margin: 0 0 12px;">▶</span>
+<a href="https://WEBINAR-LINK-GOES-HERE" style="display: block; text-decoration: none; background: radial-gradient(ellipse 120% 120% at 50% 0%, #3E6389 0%, #1E3760 55%, #13234B 100%); border-radius: 12px; padding: 54px 20px; text-align: center; margin: 0 0 18px; max-width: none;">
+<span style="display: inline-block; width: 64px; height: 64px; line-height: 64px; border-radius: 50%; background: #EC9446; color: #ffffff; font-size: 26px; font-weight: bold; margin: 0 0 12px;">▶&#xFE0E;</span>
 <span style="display: block; font-size: 15px; font-weight: bold; color: #ffffff;">[Webinar title]</span>
 <span style="display: block; font-size: 13px; color: #b5b7c1;">[XX] minutes</span>
 </a>
@@ -31,7 +30,7 @@
 </div>
 </div>
 <!-- angled transition: navy into light -->
-<div style="margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); height: 70px; background: linear-gradient(to bottom right, #1E3760 49.5%, #F8FCFD 50%); max-width: none;"></div>
+<div style="margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); height: 70px; background: linear-gradient(to bottom right, #13234B 49.5%, #F8FCFD 50%); max-width: none;"></div>
 
 <!-- WHAT YOU'LL LEARN (light band) -->
 <div style="margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); background: #F8FCFD; padding: 40px 20px 88px; padding-left: max(20px, calc(50vw - 480px)); padding-right: max(20px, calc(50vw - 480px)); max-width: none;">
@@ -42,7 +41,7 @@
 <p style="font-size: 17px; color: #808080; margin: 0;">[One sentence setting up the session.]</p>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 44px 40px; max-width: none; margin-left: 0; margin-right: 0;">
-<div class="fe-reveal" style="flex: 1 1 250px; display: flex; gap: 16px; align-items: flex-start; max-width: none; margin-left: 0; margin-right: 0;"><div style="flex: 0 0 48px; height: 48px; line-height: 48px; text-align: center; border-radius: 12px; background: #FCEBDC; color: #D97E2E; font-size: 21px; font-weight: bold; max-width: none; margin-left: 0; margin-right: 0;">↗</div><div style="max-width: none; margin-left: 0; margin-right: 0;"><h3 style="font-size: 18px; color: #13234b; font-weight: 700; margin: 0 0 6px;">[Takeaway one]</h3><p style="font-size: 15px; color: #808080; margin: 0;">[Two lines on what this covers.]</p></div></div>
+<div class="fe-reveal" style="flex: 1 1 250px; display: flex; gap: 16px; align-items: flex-start; max-width: none; margin-left: 0; margin-right: 0;"><div style="flex: 0 0 48px; height: 48px; line-height: 48px; text-align: center; border-radius: 12px; background: #FCEBDC; color: #D97E2E; font-size: 21px; font-weight: bold; max-width: none; margin-left: 0; margin-right: 0;">↗&#xFE0E;</div><div style="max-width: none; margin-left: 0; margin-right: 0;"><h3 style="font-size: 18px; color: #13234b; font-weight: 700; margin: 0 0 6px;">[Takeaway one]</h3><p style="font-size: 15px; color: #808080; margin: 0;">[Two lines on what this covers.]</p></div></div>
 <div class="fe-reveal" style="flex: 1 1 250px; display: flex; gap: 16px; align-items: flex-start; max-width: none; margin-left: 0; margin-right: 0;"><div style="flex: 0 0 48px; height: 48px; line-height: 48px; text-align: center; border-radius: 12px; background: #E3EDF3; color: #3E6389; font-size: 21px; font-weight: bold; max-width: none; margin-left: 0; margin-right: 0;">◎</div><div style="max-width: none; margin-left: 0; margin-right: 0;"><h3 style="font-size: 18px; color: #13234b; font-weight: 700; margin: 0 0 6px;">[Takeaway two]</h3><p style="font-size: 15px; color: #808080; margin: 0;">[Two lines on what this covers.]</p></div></div>
 <div class="fe-reveal" style="flex: 1 1 250px; display: flex; gap: 16px; align-items: flex-start; max-width: none; margin-left: 0; margin-right: 0;"><div style="flex: 0 0 48px; height: 48px; line-height: 48px; text-align: center; border-radius: 12px; background: #E9F2ED; color: #4F8A6F; font-size: 21px; font-weight: bold; max-width: none; margin-left: 0; margin-right: 0;">☰</div><div style="max-width: none; margin-left: 0; margin-right: 0;"><h3 style="font-size: 18px; color: #13234b; font-weight: 700; margin: 0 0 6px;">[Takeaway three]</h3><p style="font-size: 15px; color: #808080; margin: 0;">[Two lines on what this covers.]</p></div></div>
 </div>
@@ -54,12 +53,12 @@
 <div style="max-width: none; margin-left: 0; margin-right: 0;">
 <div class="fe-reveal" style="text-align: center; max-width: 680px; margin: 0 auto 48px;">
 <div style="font-size: 13px; font-weight: bold; letter-spacing: 1.5px; text-transform: uppercase; color: #EC9446; margin: 0 0 8px; max-width: none;">Your speakers</div>
-<h2 style="font-size: 32px; color: #13234b; font-weight: 800; line-height: 1.2; margin: 0;">Meet the experts</h2>
+<h2 style="font-size: 32px; color: #13234b; font-weight: 800; line-height: 1.2; margin: 0 0 12px;">Meet the experts</h2>
+<p style="font-size: 17px; color: #808080; margin: 0;">Presented together by FocusEconomics and Haver Analytics.</p>
 </div>
-<!-- Duplicate this block for each speaker -->
 <div style="display: flex; flex-wrap: wrap; gap: 32px; max-width: none; margin-left: 0; margin-right: 0;">
 <div class="fe-reveal" style="flex: 1 1 280px; border-top: 3px solid #EC9446; padding-top: 18px; max-width: none; margin-left: 0; margin-right: 0;"><h3 style="font-size: 18px; color: #13234b; font-weight: 700; margin: 0 0 2px;">[Speaker name]</h3><p style="font-size: 14px; color: #EC9446; font-weight: bold; margin: 0 0 8px;">[Title, FocusEconomics]</p><p style="font-size: 15px; color: #808080; margin: 0;">[Two-line bio.]</p></div>
-<div class="fe-reveal" style="flex: 1 1 280px; border-top: 3px solid #EC9446; padding-top: 18px; max-width: none; margin-left: 0; margin-right: 0;"><h3 style="font-size: 18px; color: #13234b; font-weight: 700; margin: 0 0 2px;">[Speaker name]</h3><p style="font-size: 14px; color: #EC9446; font-weight: bold; margin: 0 0 8px;">[Title, FocusEconomics]</p><p style="font-size: 15px; color: #808080; margin: 0;">[Two-line bio.]</p></div>
+<div class="fe-reveal" style="flex: 1 1 280px; border-top: 3px solid #EC9446; padding-top: 18px; max-width: none; margin-left: 0; margin-right: 0;"><h3 style="font-size: 18px; color: #13234b; font-weight: 700; margin: 0 0 2px;">[Speaker name]</h3><p style="font-size: 14px; color: #EC9446; font-weight: bold; margin: 0 0 8px;">[Title, Haver Analytics]</p><p style="font-size: 15px; color: #808080; margin: 0;">[Two-line bio.]</p></div>
 </div>
 </div>
 </div>
@@ -68,7 +67,7 @@
 <div style="margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); height: 70px; background: linear-gradient(to top left, #13234B 49.5%, #ffffff 50%); max-width: none;"></div>
 
 <!-- FINAL CTA (navy band) -->
-<div style="margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); background: linear-gradient(180deg, #13234B 0%, #1E3760 100%); padding: 32px 20px 80px; padding-left: max(20px, calc(50vw - 480px)); padding-right: max(20px, calc(50vw - 480px)); text-align: center; max-width: none;">
+<div style="margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); background: radial-gradient(ellipse 110% 100% at 10% 100%, #3E6389 0%, #1E3760 50%, #13234B 100%); padding: 32px 20px 80px; padding-left: max(20px, calc(50vw - 480px)); padding-right: max(20px, calc(50vw - 480px)); text-align: center; max-width: none;">
 <div class="fe-reveal" style="max-width: 760px; margin: 0 auto; padding: 0 20px;">
 <h2 style="font-size: 34px; color: #ffffff; font-weight: 800; line-height: 1.2; margin: 0 0 10px;">Plan with the consensus, not a guess.</h2>
 <p style="font-size: 17px; color: #dadce6; margin: 0 0 28px;">Want the forecasts behind the discussion? See what a FocusAnalytics free trial can do for your team.</p>
