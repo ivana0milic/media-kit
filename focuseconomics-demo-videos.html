@@ -3,7 +3,7 @@
   Demo videos landing page: one video at a time, with every demo listed in the "All demos" sidebar.
   Link straight to a video by adding its id to the page URL, e.g. https://www.focus-economics.com/demo-videos/#track-a-commodity
   All styling is inline: WordPress shows a style block as text on this site, so don't add one.
-  Videos 2-11 start hidden; the script at the end switches between them.
+  Videos 2-11 start hidden; the script at the end switches between them and starts the video a link points to.
   To add a video: copy a .fe-panel block (keep style="display: none;") with a new id and add a matching link in .fe-tabs.
 -->
 <div style="width: 100%; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color: #001d27; line-height: 1.65;">
@@ -140,6 +140,35 @@
       if (on) t.setAttribute('aria-current', 'true'); else t.removeAttribute('aria-current');
     });
     if (scroll && player.getBoundingClientRect().top < 0) player.scrollIntoView({ behavior: 'smooth' });
+    return panel;
+  }
+  // Browsers only let a video start on its own when muted, so fall back to muted with a "Tap for sound" button.
+  function autoplay(video) {
+    var attempt = video.play();
+    if (!attempt) return;
+    attempt.catch(function () {
+      video.muted = true;
+      video.play().then(function () { soundButton(video); }).catch(function () {});
+    });
+  }
+  function soundButton(video) {
+    var button = document.createElement('button');
+    button.type = 'button';
+    button.textContent = '🔇  Tap for sound';
+    button.setAttribute('style', 'position: absolute; top: 14px; left: 14px; z-index: 2; background: #EC9446; color: #13234b; border: 0; border-radius: 20px; padding: 9px 16px; font: bold 15px -apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,Helvetica,Arial,sans-serif; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.3);');
+    function done() {
+      button.remove();
+      video.removeEventListener('volumechange', onVolume);
+    }
+    function onVolume() { if (!video.muted) done(); }
+    button.addEventListener('click', function () {
+      video.muted = false;
+      video.currentTime = 0;
+      video.play();
+      done();
+    });
+    video.addEventListener('volumechange', onVolume);
+    video.parentNode.appendChild(button);
   }
   player.classList.add('fe-js');
   player.addEventListener('click', function (e) {
@@ -150,7 +179,9 @@
     show(a.getAttribute('href').slice(1), true);
   });
   window.addEventListener('popstate', function () { show(location.hash.slice(1), false); });
-  show(location.hash.slice(1), false);
+  var linked = show(location.hash.slice(1), false);
+  // Arriving from a link to a specific video (e.g. from an email): start it playing.
+  if (location.hash.slice(1) === linked.id) autoplay(linked.querySelector('video'));
 })();
 </script>
 <!-- /wp:html -->
