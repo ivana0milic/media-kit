@@ -2,42 +2,17 @@
 <!--
   Demo videos landing page: one video at a time, with every demo listed in the "All demos" sidebar.
   Link straight to a video by adding its id to the page URL, e.g. https://www.focus-economics.com/demo-videos/#track-a-commodity
-  Styling is inline (like the media kit page) so the page holds together even if WordPress strips the style block.
-  Videos 2-11 are hidden inline; the script at the end switches videos, and the style block can do it on its own if the script is stripped.
-  To add a video: copy a .fe-panel block (keep style="display: none;") with a new id, add a matching link in .fe-tabs,
-  and add the id to the tab-highlight rules in the style block.
+  All styling is inline: WordPress shows a style block as text on this site, so don't add one.
+  Videos 2-11 start hidden; the script at the end switches between them.
+  To add a video: copy a .fe-panel block (keep style="display: none;") with a new id and add a matching link in .fe-tabs.
 -->
-<style>
-.fe-player:not(.fe-js) .fe-panel:target{display:block!important;}
-.fe-player:not(.fe-js):has(.fe-panel:target) .fe-panel:not(:target){display:none!important;}
-.fe-player:not(.fe-js):has(.fe-panel:target) .fe-tabs a{background:transparent!important;border-left-color:transparent!important;}
-.fe-player:not(.fe-js):has(#accessing-reports:target) .fe-tabs a[href="#accessing-reports"],
-.fe-player:not(.fe-js):has(#find-a-report:target) .fe-tabs a[href="#find-a-report"],
-.fe-player:not(.fe-js):has(#read-any-economy:target) .fe-tabs a[href="#read-any-economy"],
-.fe-player:not(.fe-js):has(#track-a-commodity:target) .fe-tabs a[href="#track-a-commodity"],
-.fe-player:not(.fe-js):has(#country-deep-dive:target) .fe-tabs a[href="#country-deep-dive"],
-.fe-player:not(.fe-js):has(#consensus-dashboards:target) .fe-tabs a[href="#consensus-dashboards"],
-.fe-player:not(.fe-js):has(#forecast-evolution:target) .fe-tabs a[href="#forecast-evolution"],
-.fe-player:not(.fe-js):has(#benchmark-peers:target) .fe-tabs a[href="#benchmark-peers"],
-.fe-player:not(.fe-js):has(#best-worst-cases:target) .fe-tabs a[href="#best-worst-cases"],
-.fe-player:not(.fe-js):has(#presentation-material:target) .fe-tabs a[href="#presentation-material"],
-.fe-player:not(.fe-js):has(#custom-dataset:target) .fe-tabs a[href="#custom-dataset"]{background:#F8FCFD!important;border-left-color:#EC9446!important;}
-.fe-tabs a:hover{background:#F8FCFD!important;}
-.fe-next:hover{border-color:#669EBF!important;}
-.fe-panel{scroll-margin-top:120px;}
-@media (max-width:700px){
-.fe-hero{padding:28px 22px!important;}
-.fe-hero h1{font-size:26px!important;}
-.fe-card{padding:20px!important;}
-}
-</style>
 <div style="width: 100%; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color: #001d27; line-height: 1.65;">
-<div class="fe-hero" style="background: #13234B; border-radius: 16px; padding: 32px 40px; margin: 0 0 20px;">
+<div class="fe-hero" style="background: #13234B; border-radius: 16px; padding: 28px 28px; margin: 0 0 20px;">
 <div style="color: #6cc3e5; font-size: 13px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 10px;">Demo videos</div>
-<h1 style="font-family: Georgia,'Times New Roman',serif; font-size: 34px; line-height: 1.15; color: #ffffff; font-weight: bold; margin: 0 0 10px;">See FocusAnalytics in action</h1>
+<h1 style="font-family: Georgia,'Times New Roman',serif; font-size: 30px; line-height: 1.15; color: #ffffff; font-weight: bold; margin: 0 0 10px;">See FocusAnalytics in action</h1>
 <p style="font-size: 17px; color: #dadce6; max-width: 640px; margin: 0;">Eleven short walkthroughs, each under two minutes. Pick any demo from the list.</p>
 </div>
-<div class="fe-card" style="background: #FFFFFF; border: 1px solid #DADCE6; border-radius: 14px; padding: 32px; margin: 0 0 20px;">
+<div class="fe-card" style="background: #FFFFFF; border: 1px solid #DADCE6; border-radius: 14px; padding: 24px; margin: 0 0 20px;">
 <div class="fe-player" style="display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start;">
 <div class="fe-stage" style="flex: 999 1 480px; min-width: 0;">
 <div class="fe-panel" id="accessing-reports">
