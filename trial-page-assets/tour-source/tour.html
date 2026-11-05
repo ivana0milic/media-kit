@@ -1,0 +1,291 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: "OS"; src: url("../fonts/OpenSans.ttf"); font-weight: 300 800; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1280px; height: 720px; overflow: hidden; background: #fff; }
+  body { font-family: "OS", sans-serif; color: #13234B; -webkit-font-smoothing: antialiased; position: relative; }
+  .wrap { width: 1000px; margin: 0 auto; position: relative; }
+
+  /* Platform nav */
+  nav { height: 54px; background: #13234B; color: #fff; position: relative; z-index: 2; }
+  nav .wrap { display: flex; align-items: center; height: 54px; }
+  .logo { font-size: 19px; letter-spacing: -.3px; }
+  .logo b { font-weight: 800; } .logo span { font-weight: 300; }
+  .beta { font-size: 7px; font-weight: 700; background: #4C8DD6; border-radius: 2px; padding: 1px 3px; margin-left: 4px; vertical-align: 2px; }
+  .menu { display: flex; gap: 24px; margin-left: 140px; font-size: 13px; }
+  .menu div { opacity: .9; } .menu .on { font-weight: 700; opacity: 1; }
+  .icons { margin-left: auto; display: flex; gap: 14px; }
+  .icons i { width: 15px; height: 15px; border: 1.6px solid #fff; border-radius: 50%; display: block; }
+
+  .scene { position: absolute; left: 0; right: 0; top: 54px; bottom: 0; }
+
+  /* Home */
+  .hero { height: 150px; background: linear-gradient(90deg, #3B5F8C 0%, #4F7FAE 60%, #6A9FC6 100%); color: #fff; }
+  .hero h1 { margin: 0; padding-top: 30px; text-align: center; font-size: 24px; font-weight: 600; }
+  .picks { display: flex; align-items: center; margin-top: 22px; }
+  .picks .lbl { font-weight: 700; font-size: 14px; width: 130px; }
+  .pick { flex: 1; border-left: 1px solid #ffffffaa; padding: 2px 14px; font-size: 11px; line-height: 1.35; }
+  .pick small { display: block; font-size: 9.5px; opacity: .85; margin-top: 2px; }
+  .home { display: flex; gap: 28px; margin-top: 30px; }
+  .card-title { font-size: 18px; font-weight: 600; display: flex; align-items: center; justify-content: space-between; height: 30px; }
+  .select { border: 1px solid #DADCE6; border-radius: 3px; font-size: 11px; font-weight: 400; padding: 6px 10px; width: 170px; display: flex; justify-content: space-between; color: #13234B; background: #fff; }
+  .tbl { width: 476px; } .ins { flex: 1; }
+  .thead { display: grid; grid-template-columns: 1fr 62px 62px 74px 70px; background: #F4F6F9; font-size: 11px; padding: 10px 14px; margin-top: 14px; }
+  .row { display: grid; grid-template-columns: 1fr 62px 62px 74px 70px; font-size: 12px; padding: 0 14px; height: 40px; align-items: center; border-bottom: 1px solid #ECEEF2; position: relative; }
+  .row .c { color: #2C4F7C; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+  .row .n { text-align: right; padding-right: 14px; }
+  .row .d { text-align: right; font-size: 11.5px; padding-right: 4px; }
+  .up { color: #3FAE6A; } .dn { color: #E2453C; } .fl { color: #9AA0AC; }
+  .flag { width: 15px; height: 10px; border-radius: 1px; display: inline-block; }
+  .hl { position: absolute; inset: 0; background: #EAF2FA; z-index: -1; }
+  .ins-tabs { display: flex; gap: 18px; font-size: 11px; color: #808080; margin-top: 14px; border-bottom: 1px solid #DADCE6; padding-bottom: 8px; }
+  .ins-tabs .on { color: #2C8FB7; position: relative; }
+  .ins-tabs .on::after { content: ""; position: absolute; left: 0; right: 0; bottom: -9px; height: 2px; background: #2C8FB7; }
+  .story { margin-top: 15px; }
+  .story b { display: block; font-size: 12px; color: #2C4F7C; font-weight: 600; }
+  .story p { margin: 3px 0 2px; font-size: 11px; color: #5F6470; }
+  .story small { font-size: 10px; color: #9AA0AC; }
+
+  /* Dashboard */
+  .subnav { height: 46px; border-bottom: 1px solid #ECEEF2; }
+  .subnav .wrap { display: flex; gap: 24px; font-size: 12.5px; color: #8A93A6; height: 46px; align-items: center; }
+  .subnav .on { color: #2C6FB0; position: relative; }
+  .subnav .on::after { content: ""; position: absolute; left: 0; right: 0; bottom: -15px; height: 2px; background: #2C6FB0; }
+  .dash { background: #F7F8FA; position: absolute; top: 46px; left: 0; right: 0; bottom: 0; }
+  .toggle { display: inline-flex; border: 1px solid #DADCE6; border-radius: 4px; overflow: hidden; font-size: 12px; margin: 14px 0 12px; background: #fff; }
+  .toggle div { padding: 6px 14px; } .toggle .on { background: #13234B; color: #fff; }
+  .panels { display: flex; gap: 14px; }
+  .panel { flex: 1; background: #fff; border: 1px solid #DADCE6; border-radius: 4px; padding: 10px 12px 6px; }
+  .dd { display: flex; gap: 6px; }
+  .dd div { border: 1px solid #DADCE6; border-radius: 3px; font-size: 10px; padding: 5px 8px; flex: 1; white-space: nowrap; overflow: hidden; }
+  .dd div:first-child { flex: 1.1; } .dd div:last-child { flex: .8; }
+  .evo-h { display: flex; align-items: center; gap: 10px; font-size: 12.5px; font-weight: 600; margin: 4px 0 0; }
+  .evo-h span { border: 1px solid #DADCE6; border-radius: 3px; font-size: 10px; font-weight: 400; padding: 3px 8px; width: 64px; }
+  svg text { font-family: "OS", sans-serif; }
+
+  /* Cursor + tooltip */
+  #cursor { position: absolute; left: 0; top: 0; width: 22px; height: 22px; z-index: 10; pointer-events: none; }
+  #ripple { position: absolute; width: 36px; height: 36px; margin: -18px 0 0 -18px; border-radius: 50%; background: #EC9446; z-index: 9; opacity: 0; }
+  #tip { position: absolute; z-index: 8; background: #13234B; color: #fff; font-size: 11px; border-radius: 6px; padding: 7px 10px; line-height: 1.4; white-space: nowrap; opacity: 0; box-shadow: 0 8px 18px #13234B33; }
+  #tip b { color: #EC9446; }
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <div class="logo"><b>FOCUS</b><span>ANALYTICS</span><span class="beta">BETA</span></div>
+  <div class="menu"><div id="m-home" class="on">Home</div><div>Countries ⌄</div><div>Commodities ⌄</div><div id="m-dash">Dashboards</div><div>Databank</div><div>Reports</div></div>
+  <div class="icons"><i></i><i></i></div>
+</div></nav>
+
+<!-- Scene 1: Home -->
+<div class="scene" id="s1">
+  <div class="hero" id="hero"><div class="wrap">
+    <h1>Welcome, Client</h1>
+    <div class="picks"><div class="lbl">Economist Picks</div>
+      <div class="pick">The Chinese and U.S. Economies: Consumption…<small>Jun 12, 2026 | Growth</small></div>
+      <div class="pick">The Economic Rise of China: Navigating a Structural…<small>May 26, 2026 | China</small></div>
+      <div class="pick">How Has War in the Middle East Affected Economists'…<small>Apr 20, 2026 | Inflation</small></div>
+      <div class="pick">The Iran War: What the World's Leading Economist…<small>Mar 04, 2026 | Iran</small></div>
+    </div>
+  </div></div>
+  <div class="wrap home">
+    <div class="tbl">
+      <div class="card-title">Key Forecasts <div class="select">GDP Growth <span>⌄</span></div></div>
+      <div class="thead"><div>Country / Region ↑</div><div style="text-align:right;padding-right:14px">2026 ↑</div><div style="text-align:right;padding-right:14px">2027 ↑</div><div style="text-align:right">Δ 2026 ↑</div><div style="text-align:right">Δ 2027 ↑</div></div>
+      <div id="rows"></div>
+    </div>
+    <div class="ins">
+      <div class="card-title">Consensus Insights</div>
+      <div class="ins-tabs"><div class="on">All</div><div>Countries</div><div>Commodities</div></div>
+      <div id="stories"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Scene 2: Comparison dashboard -->
+<div class="scene" id="s2">
+  <div class="subnav"><div class="wrap"><div class="on">Comparison</div><div>Consensus Building</div><div>Consensus Building 2</div><div>Evolution</div><div>Scenario Building</div><div>Overview</div></div></div>
+  <div class="dash"><div class="wrap">
+    <div class="toggle"><div class="on">Countries</div><div>Commodities</div></div>
+    <div class="panels" id="panels"></div>
+  </div></div>
+</div>
+
+<div id="tip"></div>
+<div id="ripple"></div>
+<svg id="cursor" viewBox="0 0 22 22"><path d="M3 2 L3 17 L7 13.2 L9.8 19.5 L12.4 18.4 L9.7 12.3 L15 12.3 Z" fill="#13234B" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg>
+
+<script>
+const $ = s => document.querySelector(s);
+const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+const seg = (t, a, b) => clamp((t - a) / (b - a));
+const eo = p => 1 - Math.pow(1 - p, 3);                  // ease out
+const eio = p => p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+const L = 15.6;                                          // loop length (s)
+
+/* ---------- Scene 1 content (values from the platform screenshot) ---------- */
+const flags = {
+  ASEAN: 'radial-gradient(circle at 40% 40%, #7FD1F0, #2E7FC1)',
+  Australia: 'linear-gradient(#012169,#012169)',
+  Austria: 'linear-gradient(#ED2939 33%, #fff 33% 66%, #ED2939 66%)',
+  Azerbaijan: 'linear-gradient(#0092BC 33%, #E4002B 33% 66%, #00AF66 66%)',
+  Bahamas: 'linear-gradient(#00ABC9 33%, #FAE042 33% 66%, #00ABC9 66%)',
+  Bahrain: 'linear-gradient(90deg, #fff 28%, #CE1126 28%)',
+  Bangladesh: 'radial-gradient(circle at 45% 50%, #F42A41 32%, #006A4E 34%)',
+};
+const rows = [
+  ['ASEAN', 4.6, 4.6, [0.07, 1], [0.06, 1]], ['Australia', 1.6, 2.0, [0.06, -1], [0.07, -1]],
+  ['Austria', 1.1, 1.4, [0.00, 0], [0.02, 1]], ['Azerbaijan', 2.2, 2.4, [0.29, -1], [0.07, -1]],
+  ['Bahamas', 1.4, null, [0.38, -1], null], ['Bahrain', 8.2, 4.1, [0.95, 1], [0.14, 1]],
+  ['Bangladesh', 4.1, 4.6, [0.56, -1], [0.82, -1]],
+];
+const arrow = s => s > 0 ? '▲' : s < 0 ? '▼' : '■';
+const cls = s => s > 0 ? 'up' : s < 0 ? 'dn' : 'fl';
+$('#rows').innerHTML = rows.map((r, i) => `<div class="row" id="r${i}">${i === 1 ? '<div class="hl" id="hl"></div>' : ''}
+  <div class="c"><span class="flag" style="background:${flags[r[0]]};${r[0] === 'ASEAN' ? 'border-radius:50%;width:11px;height:11px' : ''}"></span>${r[0]}</div>
+  <div class="n" data-v="${r[1]}"></div><div class="n" data-v="${r[2] ?? ''}"></div>
+  <div class="d ${cls(r[3][1])}" data-d="${r[3][0]}" data-s="${r[3][1]}"></div>
+  <div class="d ${r[4] ? cls(r[4][1]) : 'fl'}" data-d="${r[4] ? r[4][0] : ''}" data-s="${r[4] ? r[4][1] : ''}"></div></div>`).join('');
+const stories = [
+  ['Crude Oil (Brent): Prices to ease but stay above prewar level', 'Brent crude prices climbed further in October, reaching their highest monthly…'],
+  ['Crude Oil (WTI): Panel sees prices declining ahead', 'WTI prices topped Brent prices for the first time in nearly a decade in June, but hav…'],
+  ['Gasoline: Prices should ease next year', "In October, gasoline's price premium vs crude fell further from the series high…"],
+  ['Natural Gas U.S.: Prices to rebound next year', 'Average U.S. natural gas prices increased for a second month in October. American…'],
+  ['Thermal Coal: Prices to ease by Q4 2027', 'Australian thermal coal prices rose modestly in October, reaching their highest…'],
+];
+$('#stories').innerHTML = stories.map((s, i) => `<div class="story" id="st${i}"><b>${s[0]}</b><p>${s[1]}</p><small>Nov 05, 2026</small></div>`).join('');
+
+/* ---------- Scene 2 content (shapes traced from the comparison screenshot) ---------- */
+const years = [2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030];
+const countries = [
+  { name: 'United States', vals: [6.2, 2.5, 2.9, 2.95, 2.35, 2.2, 2.1, 2.1, 2.15, 2.15], y: [2, 7], step: 1, evo: [[0, 1.72], [.06, 1.78], [.12, 1.9], [.2, 1.86], [.26, 2.22], [.29, 1.98], [.34, 2.08], [.4, 2.11], [.48, 2.06], [.55, 2.0], [.62, 1.97], [.7, 1.98], [.74, 1.6], [.8, 1.7], [.86, 1.9], [.9, 2.36], [.93, 2.2], [.97, 2.13], [1, 2.2]], ey: [1.4, 2.4] },
+  { name: 'Argentina', vals: [10.4, 6.0, -1.9, -1.3, 4.4, 1.8, 2.6, 2.9, 2.9, 3.0], y: [-2, 12], step: 2, evo: [[0, 2.25], [.1, 2.3], [.18, 2.42], [.24, 2.3], [.3, 2.45], [.36, 2.3], [.44, 2.4], [.5, 2.55], [.56, 2.95], [.62, 3.05], [.66, 3.6], [.72, 3.5], [.76, 3.3], [.8, 3.0], [.84, 3.25], [.88, 3.15], [.92, 3.0], [.96, 2.7], [.985, 2.3], [1, 1.9]], ey: [1.5, 3.9] },
+];
+let seed = 7;
+const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+function evoSeries(anchors) {                    // dense, slightly noisy daily-style series
+  const pts = [];
+  for (let i = 0; i <= 240; i++) {
+    const x = i / 240;
+    let k = anchors.findIndex(a => a[0] >= x); if (k <= 0) k = 1;
+    const [x0, y0] = anchors[k - 1], [x1, y1] = anchors[k];
+    const y = y0 + (y1 - y0) * ((x - x0) / (x1 - x0 || 1));
+    pts.push([x, y + (rnd() - .5) * .045]);
+  }
+  return pts;
+}
+const W = 464, CH = 214, EH = 196, PL = 26, PR = 10;
+function panel(c, idx) {
+  const [y0, y1] = c.y, X = i => PL + (W - PL - PR) * i / 9, Y = v => 12 + (CH - 44) * (1 - (v - y0) / (y1 - y0));
+  const ticks = [];
+  for (let v = y0; v <= y1 + 1e-9; v += c.step) { ticks.push(`<line x1="${PL}" x2="${W - PR}" y1="${Y(v)}" y2="${Y(v)}" stroke="#EEF1F6"/><text x="${PL - 6}" y="${Y(v) + 3}" font-size="8.5" fill="#808080" text-anchor="end">${Math.round(v)}</text>`); }
+  const act = c.vals.slice(0, 5).map((v, i) => `${i ? 'L' : 'M'}${X(i)},${Y(v)}`).join('');
+  const con = c.vals.slice(4).map((v, i) => `${i ? 'L' : 'M'}${X(i + 4)},${Y(v)}`).join('');
+  const dots = c.vals.map((v, i) => `<circle class="pt" data-x="${X(i)}" cx="${X(i)}" cy="${Y(v)}" r="3" ${i < 5 ? 'fill="#2C4F7C"' : 'fill="#fff" stroke="#2C4F7C" stroke-width="1.3"'}/>`).join('');
+  const yl = years.map((yr, i) => `<text x="${X(i)}" y="${CH - 18}" font-size="8.5" fill="#5F6470" text-anchor="middle">${yr}</text>`).join('');
+  const [e0, e1] = c.ey, EX = x => PL + (W - PL - PR) * x, EY = v => 8 + (EH - 34) * (1 - (v - e0) / (e1 - e0));
+  const evo = evoSeries(c.evo).map((p, i) => `${i ? 'L' : 'M'}${EX(p[0]).toFixed(1)},${EY(p[1]).toFixed(1)}`).join('');
+  const et = []; for (let k = 0; k <= 4; k++) { const v = e0 + (e1 - e0) * k / 4; et.push(`<line x1="${PL}" x2="${W - PR}" y1="${EY(v)}" y2="${EY(v)}" stroke="#EEF1F6"/><text x="${PL - 6}" y="${EY(v) + 3}" font-size="8.5" fill="#808080" text-anchor="end">${v.toFixed(1)}</text>`); }
+  const dl = ['01 Jan 22', '01 Jan 23', '01 Jan 24', '01 Jan 25', '01 Jan 26'].map((d, i) => `<text x="${EX(.03 + i * .215)}" y="${EH - 12}" font-size="8.5" fill="#5F6470" text-anchor="middle">${d}</text>`).join('');
+  return `<div class="panel" id="p${idx}">
+    <div class="dd"><div>${c.name} ⌄</div><div>Economic Growth (Real G… ⌄</div><div>Annual ⌄</div></div>
+    <svg width="${W}" height="${CH}" style="display:block;margin-top:6px">
+      <defs><clipPath id="ca${idx}"><rect id="ra${idx}" x="0" y="0" width="0" height="${CH}"/></clipPath><clipPath id="ce${idx}"><rect id="re${idx}" x="0" y="0" width="0" height="${EH}"/></clipPath></defs>
+      ${ticks.join('')}${yl}
+      <g clip-path="url(#ca${idx})"><path d="${act}" fill="none" stroke="#2C4F7C" stroke-width="2"/><path d="${con}" fill="none" stroke="#2C4F7C" stroke-width="1.5" stroke-dasharray="2 3"/></g>
+      <g id="dots${idx}">${dots}</g>
+      <circle cx="${W / 2 - 40}" cy="${CH - 6}" r="3" fill="#2C4F7C"/><text x="${W / 2 - 34}" y="${CH - 3}" font-size="8.5" fill="#5F6470">Actual</text>
+      <circle cx="${W / 2 + 6}" cy="${CH - 6}" r="3" fill="#fff" stroke="#2C4F7C"/><text x="${W / 2 + 12}" y="${CH - 3}" font-size="8.5" fill="#5F6470">Consensus</text>
+    </svg>
+    <div style="height:6px;background:#E3E8EF;border-radius:3px;margin:4px 14px 8px;position:relative"><div id="sl${idx}" style="position:absolute;left:0;top:0;height:6px;width:62%;background:#5B7FA6;border-radius:3px"></div></div>
+    <div class="evo-h">Forecast Evolution <span>2026 ⌄</span></div>
+    <svg width="${W}" height="${EH + 12}" style="display:block;margin-top:4px">
+      ${et.join('')}${dl}
+      <g clip-path="url(#ce${idx})"><path d="${evo}" fill="none" stroke="#2C4F7C" stroke-width="1.6" stroke-linejoin="round"/></g>
+      <circle cx="${W / 2 - 24}" cy="${EH - 2}" r="3" fill="#2C4F7C"/><text x="${W / 2 - 18}" y="${EH + 1}" font-size="8.5" fill="#5F6470">${c.name}</text>
+    </svg></div>`;
+}
+$('#panels').innerHTML = countries.map(panel).join('');
+
+/* ---------- Cursor path: [time, x, y] keyframes ---------- */
+const box = el => el.getBoundingClientRect();
+const rowA = box($('#r1')), dashM = box($('#m-dash'));
+const argPt = document.querySelectorAll('#dots1 .pt')[4], argBox = box(argPt);
+const cur = [
+  [0, 1320, 520], [2.8, 1320, 520], [3.6, rowA.left + 70, rowA.top + 22], [4.5, rowA.left + 74, rowA.top + 24],
+  [5.3, dashM.left + 30, dashM.top + 20], [5.6, dashM.left + 30, dashM.top + 20],
+  [10.6, dashM.left + 30, dashM.top + 20], [11.8, argBox.left + 4, argBox.top + 4], [14.2, argBox.left + 4, argBox.top + 4],
+  [15.0, 1320, 640], [L, 1320, 640],
+];
+function cursorAt(t) {
+  for (let i = 1; i < cur.length; i++) if (t <= cur[i][0]) {
+    const [a, ax, ay] = cur[i - 1], [b, bx, by] = cur[i], p = eio(seg(t, a, b));
+    return [ax + (bx - ax) * p, ay + (by - ay) * p];
+  }
+  return cur[cur.length - 1].slice(1);
+}
+
+/* ---------- Frame renderer ---------- */
+window.render = function (t) {
+  // Scene visibility: home -> dashboard -> fade back to the empty home frame for a seamless loop
+  const s2in = eo(seg(t, 5.75, 6.25)), s2out = seg(t, 14.6, 15.3);
+  $('#s1').style.opacity = 1 - s2in;
+  $('#s2').style.opacity = s2in * (1 - s2out);
+  const onDash = t >= 5.55 && t < 15.0;
+  $('#m-home').className = onDash ? '' : 'on'; $('#m-dash').className = onDash ? 'on' : '';
+
+  // Home: banner, rows with counting numbers, stories
+  const h = eo(seg(t, 0.1, 0.8));
+  $('#hero').style.opacity = h; $('#hero').style.transform = `translateY(${(1 - h) * -10}px)`;
+  const ti = eo(seg(t, 0.3, 0.9));
+  document.querySelectorAll('#s1 .card-title, #s1 .thead, #s1 .ins-tabs').forEach(e => e.style.opacity = ti);
+  rows.forEach((r, i) => {
+    const p = eo(seg(t, 0.5 + i * 0.13, 1.1 + i * 0.13)), el = $('#r' + i);
+    el.style.opacity = p; el.style.transform = `translateX(${(1 - p) * -24}px)`;
+    const q = eo(seg(t, 0.7 + i * 0.13, 1.6 + i * 0.13));
+    el.querySelectorAll('.n').forEach(n => { const v = n.dataset.v; n.textContent = v === '' ? '—' : (v * q).toFixed(1); });
+    el.querySelectorAll('.d').forEach(d => {
+      if (d.dataset.d === '') { d.textContent = '—'; return; }
+      const pop = seg(t, 1.5 + i * 0.13, 1.8 + i * 0.13);
+      d.innerHTML = `${(d.dataset.d * q).toFixed(2)} <span style="display:inline-block;font-size:9px;transform:scale(${pop ? 0.6 + 0.4 * eo(pop) + Math.sin(pop * Math.PI) * 0.35 : 0})">${arrow(+d.dataset.s)}</span>`;
+    });
+  });
+  stories.forEach((s, i) => {
+    const p = eo(seg(t, 1.1 + i * 0.16, 1.7 + i * 0.16)), el = $('#st' + i);
+    el.style.opacity = p; el.style.transform = `translateX(${(1 - p) * 24}px)`;
+  });
+  $('#hl').style.opacity = seg(t, 3.5, 3.7) * (1 - seg(t, 4.6, 4.9));
+
+  // Dashboard: panels rise, actual lines draw, points pop, consensus continues, evolution traces
+  countries.forEach((c, i) => {
+    const pin = eo(seg(t, 6.0 + i * 0.12, 6.6 + i * 0.12)), pe = $('#p' + i);
+    pe.style.opacity = pin; pe.style.transform = `translateY(${(1 - pin) * 18}px)`;
+    const draw = eio(seg(t, 6.6 + i * 0.15, 9.3 + i * 0.15)) * W;
+    $('#ra' + i).setAttribute('width', draw);
+    document.querySelectorAll(`#dots${i} .pt`).forEach(pt => {
+      const k = clamp((draw - pt.dataset.x + 6) / 14);
+      pt.setAttribute('r', k ? 3 * (eo(k) + Math.sin(k * Math.PI) * 0.5) : 0);
+    });
+    $('#re' + i).setAttribute('width', eio(seg(t, 9.0 + i * 0.2, 11.4 + i * 0.2)) * W);
+    $('#sl' + i).style.width = (20 + 42 * eo(seg(t, 6.6, 8.0))) + '%';
+  });
+
+  // Cursor, click ripple and tooltip
+  const [cx, cy] = cursorAt(t);
+  $('#cursor').style.transform = `translate(${cx}px, ${cy}px)`;
+  const rp = seg(t, 5.45, 5.9);
+  $('#ripple').style.left = (dashM.left + 30) + 'px'; $('#ripple').style.top = (dashM.top + 20) + 'px';
+  $('#ripple').style.opacity = rp > 0 && rp < 1 ? 0.45 * (1 - rp) : 0; $('#ripple').style.transform = `scale(${0.3 + rp})`;
+  const tip = $('#tip'), tp = eo(seg(t, 11.9, 12.2)) * (1 - seg(t, 14.0, 14.3));
+  tip.innerHTML = 'Argentina · 2025<br>Real GDP growth <b>4.4%</b>';
+  tip.style.left = (argBox.left + 18) + 'px'; tip.style.top = (argBox.top - 46) + 'px';
+  tip.style.opacity = tp; tip.style.transform = `translateY(${(1 - tp) * 6}px)`;
+};
+window.LOOP = L;
+render(0);
+</script>
+</body>
+</html>
