@@ -90,8 +90,6 @@
   .lede { font-size: clamp(1.1rem, 1.9vw, 1.3rem); color: var(--ring-blue); margin: 0 0 30px; max-width: 34em; }
   .cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; }
   .note { margin: 16px 0 0; font-size: 14px; color: var(--muted); }
-  .facts { display: flex; flex-wrap: wrap; gap: 10px; margin: 34px 0 0; padding: 0; list-style: none; }
-  .facts li { font-size: 14px; font-weight: 600; color: var(--blue); background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 8px 16px; }
 
   /* Hero card */
   .stage { background: linear-gradient(160deg, var(--navy) 0%, var(--blue) 100%); color: #fff; border-radius: 26px; padding: 26px 26px 26px; box-shadow: 0 30px 60px -28px rgba(19, 35, 75, .7); position: relative; overflow: hidden; }
@@ -124,8 +122,7 @@
   .grid-5 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; }
   .card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 24px 28px; box-shadow: var(--shadow); grid-column: span 2; display: flex; flex-direction: column; gap: 12px; }
   .card:nth-child(4), .card:nth-child(5) { grid-column: span 3; }
-  .pill { align-self: flex-start; font-size: 13px; font-weight: 700; color: var(--ring-blue); background: #fff; border: 1.5px solid #C8D8E6; border-radius: 999px; padding: 5px 14px; }
-  .card:first-child .pill { background: var(--ring-blue); border-color: var(--ring-blue); color: #fff; }
+  .pill { align-self: flex-start; font-size: 13px; font-weight: 700; letter-spacing: .02em; color: var(--blue); background: #E6EFF7; border-radius: 999px; padding: 6px 14px; }
   .card h3 { margin: 4px 0 0; font-size: 1.28rem; line-height: 1.25; font-weight: 700; display: flex; gap: 10px; }
   .card h3::before { content: "\2192"; color: var(--orange); font-weight: 600; }
   .card p { margin: 0; color: var(--muted); font-size: .98rem; }
@@ -147,9 +144,9 @@
   .about p.body { margin: 0 0 16px; font-size: 1.08rem; color: var(--muted); }
   .names { margin: 22px 0 0; font-size: .98rem; color: var(--blue); font-weight: 600; }
   .stats { display: grid; gap: 14px; }
-  .stat { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px; display: flex; align-items: baseline; gap: 16px; }
-  .stat b { font-size: 1.5rem; font-weight: 800; color: var(--ring-blue); min-width: 5.2em; }
-  .stat span { color: var(--muted); }
+  .stat { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 26px; display: flex; flex-direction: column; gap: 4px; }
+  .stat b { font-size: 1.7rem; line-height: 1.15; font-weight: 800; color: var(--ring-blue); }
+  .stat span { color: var(--muted); font-size: 1rem; }
 
   .final { background: linear-gradient(160deg, var(--navy) 0%, var(--blue) 100%); color: #fff; text-align: center; position: relative; overflow: hidden; }
   .final::before {
@@ -192,7 +189,6 @@
     .person { flex-direction: column; text-align: center; padding: 26px 22px; }
     .stage { padding: 22px 18px; }
     .portrait { width: 108px; height: 108px; }
-    .stat { flex-direction: column; gap: 2px; }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -228,10 +224,6 @@
           <a class="btn-ghost" href="#topics">See what is covered <span aria-hidden="true">&darr;</span></a>
         </div>
         <p class="note">Quick registration required to view the recording.</p>
-        <ul class="facts" aria-label="Webinar details">
-          <li>Growth, inflation, rates, fiscal, labor</li>
-          <li>Forecasts to 2035</li>
-        </ul>
       </div>
 
       <div class="stage" aria-label="Webinar speakers">
